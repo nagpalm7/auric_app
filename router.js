@@ -20,7 +20,7 @@ export const LoginNavigator = createStackNavigator({
   }
 },{headerMode:"none",});
 
-export const DrawerNavigator = createDrawerNavigator({
+export const DrawerNavigatorAdmin = createDrawerNavigator({
   Profile: {
     screen: FormTab,
     navigationOptions: {
@@ -30,18 +30,31 @@ export const DrawerNavigator = createDrawerNavigator({
   }
 });
 
-export const RootNavigator = (signedIn = false) => {
+export const DrawerNavigatorIntern = createDrawerNavigator({
+  Profile: {
+    screen: FormTab,
+    navigationOptions: {
+      drawerLabel: 'Form',
+      drawerIcon: ({ tintColor }) => <Icon name="user-circle" size={17} />,
+    }
+  }
+});
+
+export const RootNavigator = (signedIn = false, typeOfUser = null) => {
   return createSwitchNavigator(
     {
-      SignedIn: {
-        screen: DrawerNavigator
+      SignedInAdmin: {
+        screen: DrawerNavigatorAdmin
+      },
+      SignedInIntern: {
+        screen: DrawerNavigatorIntern
       },
       SignedOut: {
         screen: LoginNavigator
       }
     },
     {
-      initialRouteName: signedIn ? "SignedIn" : "SignedOut"
+      initialRouteName: signedIn ? typeOfUser === 'admin' ? "SignedInAdmin" : "SignedInIntern" : "SignedOut"
     }
   );
 };

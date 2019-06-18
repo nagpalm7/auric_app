@@ -3,16 +3,33 @@ import { KeyboardAvoidingView, TouchableOpacity, Image, ScrollView, StatusBar} f
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import Styles from '../styles';
 import { Container, Header, Content, Form, Item, Picker, Label, Input, Text, Button} from 'native-base';
+import { onSignIn } from "../../auth";
 
 class LoginScreen extends Component {
 
 	constructor(props){
 		super(props);
 		this.ref=null
+		this.state = {
+			username: '',
+			password: ''
+		}
+	}
+
+	setUsername(username){
+		this.setState({
+			username: username
+		})
+	}
+
+	setPassword(password){
+		this.setState({
+			password: password
+		})
 	}
 
 	render() {
-		console.log('refs', this.ref)
+		const { username, password } = this.state;
 		return (
 			<KeyboardAvoidingView  style={{flex:1, justifyContent:'center'}} behaviour='position' enabled>
 				<StatusBar backgroundColor="#cd9930" barStyle="light-content" />
@@ -27,7 +44,10 @@ class LoginScreen extends Component {
 						<Input 
 							returnKeyType = {"next"}
 							onSubmitEditing={() => { this.ref._root.focus(); }}
+							onChangeText={ (value) => this.setUsername(value)}
 						    blurOnSubmit={false}
+						    value={username}
+						    clearButtonMode='while-editing'
 						/>
 					</Item>
 					<Item floatingLabel style={Styles.item} >
@@ -36,12 +56,15 @@ class LoginScreen extends Component {
 							getRef={input => {
 						      this.ref = input;
 						    }}
+						    value={password}
+						    onChangeText={ (value) => this.setPassword(value)}
 						    returnKeyType = {"next"}
 						    type="password"
-						    onSubmitEditing={() => { console.log('tada') }}
+						    secureTextEntry={true}
+						    onSubmitEditing={() => { onSignIn(username, password) }}
 						/>
 					</Item>
-					<Button block style={Styles.loginButton}>
+					<Button block style={Styles.loginButton} onPress={() => { onSignIn(username, password, this.props.navigation) }}>
 						<Text>Login</Text>
 					</Button>
 					</Form>
