@@ -7,7 +7,7 @@ export const USER_USERNAME = "username";
 export const USER_NAME = "name";
 export const USER_TYPE = "type";
 
-export const onSignIn = (username, password, navigation) => {
+export const onSignIn = (username, password, navigation, setErrors=null) => {
   console.log('Sign In with ', username, password)
   axios.post('http://192.168.43.55:8000/api-token-auth/', {
     username: username,
@@ -22,7 +22,8 @@ export const onSignIn = (username, password, navigation) => {
             Authorization: 'Token ' + res.data.token //the token is a variable which holds the token
         }
       })
-      .then((res)=>{
+      .then(async (res)=>{
+        await setErrors({});
         AsyncStorage.setItem(USER, String(res.data.pk));
         AsyncStorage.setItem(USER_NAME, String(res.data.name));
         AsyncStorage.setItem(USER_USERNAME, String(res.data.username));
@@ -35,14 +36,15 @@ export const onSignIn = (username, password, navigation) => {
         }
       })
       .catch((err)=>{
-        console.log('error', err);
+        console.log('error', err.data);
       });
     }else{
       AsyncStorage.setItem(USER_KEY, null);
     }
   })
-  .catch((err)=>{
-    console.log('error', err);
+  .catch(async (err)=>{
+    await setErrors(err.response.data);
+    console.log('err', err.response.data);
   });
 };
 

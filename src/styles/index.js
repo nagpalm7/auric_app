@@ -1,6 +1,11 @@
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
+    loadingContainer:{
+        position: 'absolute',
+        justifyContent:'center',
+        left: '45%'
+    },
     container: {
         paddingTop: 16,
         paddingHorizontal:16
@@ -11,6 +16,11 @@ export default StyleSheet.create({
         flex: 1,
         justifyContent: "center",
         alignItems: "center"
+    },
+    error:{
+        color:'red',
+        paddingTop: 8,
+        paddingHorizontal: 15
     },
     loginContainer:{
         justifyContent:'center',

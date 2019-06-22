@@ -3,6 +3,7 @@ import { View, Image, StatusBar, AsyncStorage } from 'react-native';
 import { createAppContainer } from 'react-navigation';
 import { RootNavigator } from "./router";
 import { isSignedIn, USER_KEY, USER, USER_NAME, USER_USERNAME, USER_TYPE } from "./auth";
+import { Root } from 'native-base';
 
 import axios from 'axios';
 
@@ -84,6 +85,10 @@ export default class App extends React.Component {
     }
     // switch between login screen and app(admin and employee side)
     const App = createAppContainer(RootNavigator(signedIn,typeOfUser));
-    return <App />;
+    return (
+        <Root>
+          <App />
+        </Root>
+      );
   }
 }
