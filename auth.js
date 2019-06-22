@@ -3,6 +3,9 @@ import axios from 'axios';
 
 export const USER_KEY = "token";
 export const USER = "user";
+export const USER_USERNAME = "username";
+export const USER_NAME = "name";
+export const USER_TYPE = "type";
 
 export const onSignIn = (username, password, navigation) => {
   console.log('Sign In with ', username, password)
@@ -20,9 +23,16 @@ export const onSignIn = (username, password, navigation) => {
         }
       })
       .then((res)=>{
-        AsyncStorage.setItem(USER, res.data);
+        AsyncStorage.setItem(USER, String(res.data.pk));
+        AsyncStorage.setItem(USER_NAME, String(res.data.name));
+        AsyncStorage.setItem(USER_USERNAME, String(res.data.username));
+        AsyncStorage.setItem(USER_TYPE, String(res.data.typeOfUser));
         console.log(res.data)
-        navigation.navigate('SignedInAdmin')
+        if(res.data.typeOfUser === 'admin'){
+          navigation.navigate('SignedInAdmin')
+        }else{
+          navigation.navigate('SignedInIntern')
+        }
       })
       .catch((err)=>{
         console.log('error', err);
@@ -36,7 +46,10 @@ export const onSignIn = (username, password, navigation) => {
   });
 };
 
-export const onSignOut = () => AsyncStorage.removeItem(USER_KEY);
+export const onSignOut = (navigation) => {
+  AsyncStorage.removeItem(USER_KEY);
+  navigation.navigate('SignedOut')
+}
 
 export const isSignedIn = () => {
   return new Promise((resolve, reject) => {

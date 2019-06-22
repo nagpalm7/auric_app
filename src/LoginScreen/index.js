@@ -41,15 +41,16 @@ class LoginScreen extends Component {
 					<Form style={Styles.loginForm}>
 						<Item floatingLabel style={Styles.item} >
 							<Label>Username</Label>
-						<Input 
-							returnKeyType = {"next"}
-							onSubmitEditing={() => { this.ref._root.focus(); }}
-							onChangeText={ (value) => this.setUsername(value)}
-						    blurOnSubmit={false}
-						    value={username}
-						    clearButtonMode='while-editing'
-						/>
-					</Item>
+							<Input 
+								returnKeyType = {"next"}
+								onSubmitEditing={() => { this.ref._root.focus(); }}
+								onChangeText={ (value) => this.setUsername(value)}
+							    blurOnSubmit={false}
+							    value={username}
+							    autoCapitalize="none"
+							    clearButtonMode='while-editing'
+							/>
+						</Item>
 					<Item floatingLabel style={Styles.item} >
 						<Label>Password</Label>
 						<Input
@@ -60,8 +61,9 @@ class LoginScreen extends Component {
 						    onChangeText={ (value) => this.setPassword(value)}
 						    returnKeyType = {"next"}
 						    type="password"
+						    autoCapitalize="none"
 						    secureTextEntry={true}
-						    onSubmitEditing={() => { onSignIn(username, password) }}
+						    onSubmitEditing={() => { onSignIn(username, password, this.props.navigation) }}
 						/>
 					</Item>
 					<Button block style={Styles.loginButton} onPress={() => { onSignIn(username, password, this.props.navigation) }}>

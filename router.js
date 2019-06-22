@@ -4,7 +4,10 @@ import { createDrawerNavigator, createSwitchNavigator, createStackNavigator } fr
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import Settings from './src/Settings';  //Tab Nav
 import FormTab from './src/FormTab'; //Stack Nav
-import LoginScreen from './src/LoginScreen'
+import LoginScreen from './src/LoginScreen';
+import Drawer from './src/Drawer/Drawer';
+import Others from './src/Others';
+import Submissions from './src/Submissions';
 
 const headerStyle = {
   marginTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
@@ -20,24 +23,56 @@ export const LoginNavigator = createStackNavigator({
   }
 },{headerMode:"none",});
 
-export const DrawerNavigatorAdmin = createDrawerNavigator({
-  Profile: {
+export const DrawerNavigatorIntern = createDrawerNavigator({
+  SubmitForm: {
     screen: FormTab,
     navigationOptions: {
       drawerLabel: 'Form',
       drawerIcon: ({ tintColor }) => <Icon name="user-circle" size={17} />,
     }
-  }
+  },
+  MySubmissions: {
+    screen: Submissions,
+    navigationOptions: {
+      drawerLabel: 'My Submissions',
+      drawerIcon: ({ tintColor }) => <Icon name="user-circle" size={17} />,
+    }
+  },
+  Others: {
+    screen: Others,
+    navigationOptions: {
+      drawerLabel: 'Others',
+      drawerIcon: ({ tintColor }) => <Icon name="user-circle" size={17} />,
+    }
+  },
+},{
+  contentComponent: Drawer,
 });
 
-export const DrawerNavigatorIntern = createDrawerNavigator({
-  Profile: {
-    screen: FormTab,
+export const DrawerNavigatorAdmin = createDrawerNavigator({
+  AddUser: {
+    screen: Others,
     navigationOptions: {
-      drawerLabel: 'Form',
+      drawerLabel: 'Add User',
       drawerIcon: ({ tintColor }) => <Icon name="user-circle" size={17} />,
     }
-  }
+  },
+  Users: {
+    screen: Others,
+    navigationOptions: {
+      drawerLabel: 'List Users',
+      drawerIcon: ({ tintColor }) => <Icon name="user-circle" size={17} />,
+    }
+  },
+  Reports: {
+    screen: Others,
+    navigationOptions: {
+      drawerLabel: 'Reports',
+      drawerIcon: ({ tintColor }) => <Icon name="user-circle" size={17} />,
+    }
+  },
+},{
+  contentComponent: Drawer,
 });
 
 export const RootNavigator = (signedIn = false, typeOfUser = null) => {

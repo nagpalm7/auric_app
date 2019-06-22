@@ -2,7 +2,8 @@ import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
     container: {
-        padding: 16
+        paddingTop: 16,
+        paddingHorizontal:16
     },
     headerButton: {
         height: 44,
@@ -32,8 +33,30 @@ export default StyleSheet.create({
     },
     loginButton:{
         margin: 16,
-        marginTop:40,
+        marginTop: 40,
         backgroundColor:'#cd9930',
         color: '#fff'
+    },
+    formItem:{
+        marginLeft: 0,
+        marginRight: 0
+    },
+    formLabel:{
+        marginTop: 32,
+        marginLeft: 4,
+        color: '#cd9930',
+        fontSize: 20,
+        fontWeight: '600'
+    },
+    drawerContainer:{
+        flex: 1,
+    },
+    drawerProfile:{
+        height: '20%',
+        minHeight: 150,
+        backgroundColor: "#d0a44c", // Status bar color
+        justifyContent: 'center',
+        padding: 20,
+        marginTop: -30
     }
 })
