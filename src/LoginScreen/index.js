@@ -37,15 +37,7 @@ class LoginScreen extends Component {
 	async handleLogin(){
 		this.setState({ busy: true}, async ()=>{
 		await onSignIn(this.state.username, this.state.password, this.props.navigation, this.setErrors.bind(this))
-		this.setState({busy:false},()=>{
-			console.log(this.state)
-			if("non_field_errors" in this.state.errors)
-				Toast.show({
-		                text: "Invalid Credentials!",
-		                buttonText: 'OK',
-		                duration: 3000
-		              })
-				})
+		this.setState({busy:false});
 		})
 	}
 
@@ -97,6 +89,8 @@ class LoginScreen extends Component {
 					</Item>
 						{"password" in errors && 
 						<Text style={Styles.error}>{errors["password"]}</Text>}
+						{"non_field_errors" in errors && 
+						<Text style={Styles.error}>{errors["non_field_errors"]}</Text>}
 					<Button block style={Styles.loginButton} onPress={()=>this.handleLogin()}>
 						<Text>Login</Text>
 					</Button>
