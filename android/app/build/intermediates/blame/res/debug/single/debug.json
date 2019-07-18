@@ -4,12 +4,28 @@
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable-xxxhdpi-v4/abc_ic_star_half_black_48dp.png"
     },
     {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_ucrop_ic_next.png.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/drawable-xxhdpi-v4/ucrop_ic_next.png"
+    },
+    {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_ucrop_ic_next.png.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/drawable-hdpi-v4/ucrop_ic_next.png"
+    },
+    {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_ucrop_ic_rotate.png.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/drawable-mdpi-v4/ucrop_ic_rotate.png"
+    },
+    {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable_abc_text_cursor_material.xml.flat",
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable/abc_text_cursor_material.xml"
     },
     {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_scrubber_primary_mtrl_alpha.9.png.flat",
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable-xhdpi-v4/abc_scrubber_primary_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_ucrop_ic_crop.png.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/drawable-xxhdpi-v4/ucrop_ic_crop.png"
     },
     {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable_abc_cab_background_internal_bg.xml.flat",
@@ -24,6 +40,14 @@
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/layout/abc_screen_simple.xml"
     },
     {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_ucrop_ic_crop.png.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/drawable-xhdpi-v4/ucrop_ic_crop.png"
+    },
+    {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_ucrop_ic_crop.png.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/drawable-hdpi-v4/ucrop_ic_crop.png"
+    },
+    {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_scrubber_primary_mtrl_alpha.9.png.flat",
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable-xxhdpi-v4/abc_scrubber_primary_mtrl_alpha.9.png"
     },
@@ -36,8 +60,20 @@
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/color/abc_primary_text_disable_only_material_light.xml"
     },
     {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_ucrop_ic_rotate.png.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/drawable-xxxhdpi-v4/ucrop_ic_rotate.png"
+    },
+    {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-v21_abc_list_divider_material.xml.flat",
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable-v21/abc_list_divider_material.xml"
+    },
+    {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_ucrop_ic_reset.png.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/drawable-mdpi-v4/ucrop_ic_reset.png"
+    },
+    {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/anim_ucrop_loader_circle_scale.xml.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/anim/ucrop_loader_circle_scale.xml"
     },
     {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
@@ -104,6 +140,10 @@
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable-hdpi-v4/abc_scrubber_primary_mtrl_alpha.9.png"
     },
     {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_ucrop_ic_next.png.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/drawable-xhdpi-v4/ucrop_ic_next.png"
+    },
+    {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_scrubber_control_off_mtrl_alpha.png.flat",
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable-xhdpi-v4/abc_scrubber_control_off_mtrl_alpha.png"
     },
@@ -118,6 +158,10 @@
     {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable-xhdpi-v4/abc_ic_menu_paste_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_ucrop_ic_rotate.png.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/drawable-xhdpi-v4/ucrop_ic_rotate.png"
     },
     {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ic_star_half_black_36dp.png.flat",
@@ -194,6 +238,10 @@
     {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_scrubber_control_to_pressed_mtrl_000.png.flat",
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable-mdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png"
+    },
+    {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/layout_ucrop_view.xml.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/layout/ucrop_view.xml"
     },
     {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/anim_catalyst_push_up_out.xml.flat",
@@ -332,6 +380,10 @@
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable-xxxhdpi-v4/abc_scrubber_control_to_pressed_mtrl_005.png"
     },
     {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_ucrop_ic_next.png.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/drawable-mdpi-v4/ucrop_ic_next.png"
+    },
+    {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_textfield_search_default_mtrl_alpha.9.png.flat",
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable-xhdpi-v4/abc_textfield_search_default_mtrl_alpha.9.png"
     },
@@ -380,6 +432,10 @@
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable-xxxhdpi-v4/abc_text_select_handle_right_mtrl_dark.png"
     },
     {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_ucrop_ic_angle.png.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/drawable-xxxhdpi-v4/ucrop_ic_angle.png"
+    },
+    {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_list_pressed_holo_dark.9.png.flat",
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable-mdpi-v4/abc_list_pressed_holo_dark.9.png"
     },
@@ -392,8 +448,16 @@
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable-hdpi-v4/abc_ic_star_half_black_36dp.png"
     },
     {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/layout_ucrop_layout_rotate_wheel.xml.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/layout/ucrop_layout_rotate_wheel.xml"
+    },
+    {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_btn_radio_to_on_mtrl_015.png.flat",
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable-hdpi-v4/abc_btn_radio_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_ucrop_ic_cross.png.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/drawable-mdpi-v4/ucrop_ic_cross.png"
     },
     {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_ic_star_black_48dp.png.flat",
@@ -418,6 +482,10 @@
     {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable_tooltip_frame_dark.xml.flat",
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable/tooltip_frame_dark.xml"
+    },
+    {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-ldpi-v4_ucrop_ic_cross.png.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/drawable-ldpi-v4/ucrop_ic_cross.png"
     },
     {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable_abc_ic_search_api_material.xml.flat",
@@ -468,6 +536,10 @@
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable/abc_ic_ab_back_material.xml"
     },
     {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_ucrop_ic_crop.png.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/drawable-xxxhdpi-v4/ucrop_ic_crop.png"
+    },
+    {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/color_abc_background_cache_hint_selector_material_light.xml.flat",
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/color/abc_background_cache_hint_selector_material_light.xml"
     },
@@ -504,6 +576,10 @@
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable-mdpi-v4/abc_scrubber_primary_mtrl_alpha.9.png"
     },
     {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-ldpi-v4_ucrop_ic_scale.png.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/drawable-ldpi-v4/ucrop_ic_scale.png"
+    },
+    {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/color-v23_abc_tint_seek_thumb.xml.flat",
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/color-v23/abc_tint_seek_thumb.xml"
     },
@@ -520,6 +596,10 @@
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/anim/abc_slide_in_top.xml"
     },
     {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable_ucrop_vector_ic_crop.xml.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/drawable/ucrop_vector_ic_crop.xml"
+    },
+    {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher_round.png.flat",
         "source": "/home/mustafa/Documents/auric/android/app/src/main/res/mipmap-mdpi/ic_launcher_round.png"
     },
@@ -532,8 +612,16 @@
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable/abc_list_selector_holo_dark.xml"
     },
     {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_ucrop_ic_rotate.png.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/drawable-hdpi-v4/ucrop_ic_rotate.png"
+    },
+    {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable_abc_seekbar_tick_mark_material.xml.flat",
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable/abc_seekbar_tick_mark_material.xml"
+    },
+    {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_ucrop_ic_crop.png.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/drawable-mdpi-v4/ucrop_ic_crop.png"
     },
     {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/layout_redbox_item_title.xml.flat",
@@ -546,6 +634,10 @@
     {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/color-v23_abc_btn_colored_borderless_text_material.xml.flat",
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/color-v23/abc_btn_colored_borderless_text_material.xml"
+    },
+    {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_ucrop_ic_done.png.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/drawable-xxxhdpi-v4/ucrop_ic_done.png"
     },
     {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_list_focused_holo.9.png.flat",
@@ -604,6 +696,10 @@
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable/abc_list_divider_material.xml"
     },
     {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_ucrop_ic_scale.png.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/drawable-xxhdpi-v4/ucrop_ic_scale.png"
+    },
+    {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable-xxhdpi-v4/abc_switch_track_mtrl_alpha.9.png"
     },
@@ -636,8 +732,16 @@
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable/abc_btn_radio_material.xml"
     },
     {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_ucrop_ic_reset.png.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/drawable-hdpi-v4/ucrop_ic_reset.png"
+    },
+    {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_scrubber_control_to_pressed_mtrl_000.png.flat",
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable-xxhdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png"
+    },
+    {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_ucrop_ic_reset.png.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/drawable-xxhdpi-v4/ucrop_ic_reset.png"
     },
     {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_ic_star_black_36dp.png.flat",
@@ -658,6 +762,14 @@
     {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_cab_background_top_mtrl_alpha.9.png.flat",
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable-xhdpi-v4/abc_cab_background_top_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-ldpi-v4_ucrop_ic_next.png.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/drawable-ldpi-v4/ucrop_ic_next.png"
+    },
+    {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable_ucrop_shadow_upside.xml.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/drawable/ucrop_shadow_upside.xml"
     },
     {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",
@@ -716,6 +828,10 @@
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable/abc_ratingbar_small_material.xml"
     },
     {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_ucrop_ic_angle.png.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/drawable-xhdpi-v4/ucrop_ic_angle.png"
+    },
+    {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_notification_bg_low_normal.9.png.flat",
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/cd0780a5fc0ac2bf8fcab862815b2aeb/res/drawable-mdpi-v4/notification_bg_low_normal.9.png"
     },
@@ -744,6 +860,14 @@
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable-hdpi-v4/abc_ic_star_half_black_16dp.png"
     },
     {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/layout_ucrop_fragment_photobox.xml.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/layout/ucrop_fragment_photobox.xml"
+    },
+    {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_ucrop_ic_scale.png.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/drawable-mdpi-v4/ucrop_ic_scale.png"
+    },
+    {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_list_selector_disabled_holo_dark.9.png.flat",
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable-xxhdpi-v4/abc_list_selector_disabled_holo_dark.9.png"
     },
@@ -754,6 +878,10 @@
     {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher.png.flat",
         "source": "/home/mustafa/Documents/auric/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-ldpi-v4_ucrop_ic_reset.png.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/drawable-ldpi-v4/ucrop_ic_reset.png"
     },
     {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/color-v23_abc_tint_spinner.xml.flat",
@@ -786,6 +914,10 @@
     {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable-hdpi-v4/abc_switch_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-ldpi-v4_ucrop_ic_rotate.png.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/drawable-ldpi-v4/ucrop_ic_rotate.png"
     },
     {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-v23_abc_control_background_material.xml.flat",
@@ -846,6 +978,10 @@
     {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ic_star_black_48dp.png.flat",
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable-xxhdpi-v4/abc_ic_star_black_48dp.png"
+    },
+    {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_ucrop_ic_cross.png.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/drawable-hdpi-v4/ucrop_ic_cross.png"
     },
     {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/layout_abc_action_menu_layout.xml.flat",
@@ -924,6 +1060,10 @@
         "source": "/home/mustafa/Documents/auric/android/app/src/debug/res/xml/react_native_config.xml"
     },
     {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_ucrop_ic_reset.png.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/drawable-xxxhdpi-v4/ucrop_ic_reset.png"
+    },
+    {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_notification_bg_low_pressed.9.png.flat",
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/cd0780a5fc0ac2bf8fcab862815b2aeb/res/drawable-mdpi-v4/notification_bg_low_pressed.9.png"
     },
@@ -976,6 +1116,10 @@
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable-mdpi-v4/abc_ic_menu_paste_mtrl_am_alpha.png"
     },
     {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/anim_ucrop_loader_circle_path.xml.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/anim/ucrop_loader_circle_path.xml"
+    },
+    {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_text_select_handle_left_mtrl_light.png.flat",
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable-xxxhdpi-v4/abc_text_select_handle_left_mtrl_light.png"
     },
@@ -1000,6 +1144,10 @@
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable-v21/abc_dialog_material_background.xml"
     },
     {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/layout_ucrop_activity_photobox.xml.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/layout/ucrop_activity_photobox.xml"
+    },
+    {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_list_longpressed_holo.9.png.flat",
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable-mdpi-v4/abc_list_longpressed_holo.9.png"
     },
@@ -1012,8 +1160,16 @@
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/layout/select_dialog_item_material.xml"
     },
     {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_ucrop_ic_cross.png.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/drawable-xxxhdpi-v4/ucrop_ic_cross.png"
+    },
+    {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/layout_abc_alert_dialog_material.xml.flat",
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/layout/abc_alert_dialog_material.xml"
+    },
+    {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_ucrop_ic_done.png.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/drawable-xhdpi-v4/ucrop_ic_done.png"
     },
     {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_textfield_default_mtrl_alpha.9.png.flat",
@@ -1052,6 +1208,10 @@
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable-xhdpi-v4/abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_ucrop_ic_scale.png.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/drawable-hdpi-v4/ucrop_ic_scale.png"
+    },
+    {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_text_select_handle_middle_mtrl_dark.png.flat",
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable-mdpi-v4/abc_text_select_handle_middle_mtrl_dark.png"
     },
@@ -1080,6 +1240,18 @@
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/cd0780a5fc0ac2bf8fcab862815b2aeb/res/layout/notification_action.xml"
     },
     {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable_ucrop_vector_loader.xml.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/drawable/ucrop_vector_loader.xml"
+    },
+    {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/layout_ucrop_layout_scale_wheel.xml.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/layout/ucrop_layout_scale_wheel.xml"
+    },
+    {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_ucrop_ic_done.png.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/drawable-mdpi-v4/ucrop_ic_done.png"
+    },
+    {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_cab_background_top_mtrl_alpha.9.png.flat",
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable-xxhdpi-v4/abc_cab_background_top_mtrl_alpha.9.png"
     },
@@ -1100,12 +1272,12 @@
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable-xxhdpi-v4/abc_ic_menu_paste_mtrl_am_alpha.png"
     },
     {
-        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_notification_bg_normal.9.png.flat",
-        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/cd0780a5fc0ac2bf8fcab862815b2aeb/res/drawable-hdpi-v4/notification_bg_normal.9.png"
-    },
-    {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable_abc_tab_indicator_material.xml.flat",
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable/abc_tab_indicator_material.xml"
+    },
+    {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_notification_bg_normal.9.png.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/cd0780a5fc0ac2bf8fcab862815b2aeb/res/drawable-hdpi-v4/notification_bg_normal.9.png"
     },
     {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_scrubber_control_to_pressed_mtrl_000.png.flat",
@@ -1148,8 +1320,16 @@
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/cd0780a5fc0ac2bf8fcab862815b2aeb/res/drawable/notification_tile_bg.xml"
     },
     {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_ucrop_ic_rotate.png.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/drawable-xxhdpi-v4/ucrop_ic_rotate.png"
+    },
+    {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_notification_bg_low_normal.9.png.flat",
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/cd0780a5fc0ac2bf8fcab862815b2aeb/res/drawable-hdpi-v4/notification_bg_low_normal.9.png"
+    },
+    {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/layout_list_item.xml.flat",
+        "source": "/home/mustafa/Documents/auric/node_modules/react-native-image-picker/android/build/intermediates/packaged_res/debug/layout/list_item.xml"
     },
     {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_notification_bg_normal_pressed.9.png.flat",
@@ -1204,6 +1384,10 @@
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable-hdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png"
     },
     {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_ucrop_ic_done.png.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/drawable-hdpi-v4/ucrop_ic_done.png"
+    },
+    {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_list_divider_mtrl_alpha.9.png.flat",
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable-mdpi-v4/abc_list_divider_mtrl_alpha.9.png"
     },
@@ -1248,6 +1432,10 @@
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable-watch-v20/abc_dialog_material_background.xml"
     },
     {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_ucrop_ic_cross.png.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/drawable-xhdpi-v4/ucrop_ic_cross.png"
+    },
+    {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable-xxxhdpi-v4/abc_btn_check_to_on_mtrl_015.png"
     },
@@ -1266,6 +1454,10 @@
     {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/layout_abc_popup_menu_item_layout.xml.flat",
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/layout/abc_popup_menu_item_layout.xml"
+    },
+    {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_ucrop_ic_cross.png.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/drawable-xxhdpi-v4/ucrop_ic_cross.png"
     },
     {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/anim_catalyst_slide_down.xml.flat",
@@ -1288,8 +1480,16 @@
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable-hdpi-v4/abc_text_select_handle_right_mtrl_dark.png"
     },
     {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/color_ucrop_scale_text_view_selector.xml.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/color/ucrop_scale_text_view_selector.xml"
+    },
+    {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/color_abc_tint_edittext.xml.flat",
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/color/abc_tint_edittext.xml"
+    },
+    {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/menu_ucrop_menu_activity.xml.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/menu/ucrop_menu_activity.xml"
     },
     {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_scrubber_control_to_pressed_mtrl_000.png.flat",
@@ -1300,6 +1500,10 @@
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable-ldrtl-mdpi-v17/abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable_ucrop_vector_loader_animated.xml.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/drawable/ucrop_vector_loader_animated.xml"
+    },
+    {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/color_abc_secondary_text_material_dark.xml.flat",
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/color/abc_secondary_text_material_dark.xml"
     },
@@ -1308,8 +1512,24 @@
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable/abc_ic_clear_material.xml"
     },
     {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-ldpi-v4_ucrop_ic_angle.png.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/drawable-ldpi-v4/ucrop_ic_angle.png"
+    },
+    {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_ucrop_ic_angle.png.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/drawable-mdpi-v4/ucrop_ic_angle.png"
+    },
+    {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/color-v23_abc_tint_default.xml.flat",
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/color-v23/abc_tint_default.xml"
+    },
+    {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/xml_provider_paths.xml.flat",
+        "source": "/home/mustafa/Documents/auric/node_modules/react-native-image-crop-picker/android/build/intermediates/packaged_res/debug/xml/provider_paths.xml"
+    },
+    {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_ucrop_ic_next.png.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/drawable-xxxhdpi-v4/ucrop_ic_next.png"
     },
     {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_notify_panel_notification_icon_bg.png.flat",
@@ -1372,6 +1592,10 @@
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable-xhdpi-v4/abc_btn_check_to_on_mtrl_015.png"
     },
     {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/layout_ucrop_aspect_ratio.xml.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/layout/ucrop_aspect_ratio.xml"
+    },
+    {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable-xxxhdpi-v4/abc_btn_check_to_on_mtrl_000.png"
     },
@@ -1386,6 +1610,10 @@
     {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-ldrtl-xxhdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable-ldrtl-xxhdpi-v17/abc_ic_menu_copy_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_ucrop_ic_scale.png.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/drawable-xxxhdpi-v4/ucrop_ic_scale.png"
     },
     {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_ic_commit_search_api_mtrl_alpha.png.flat",
@@ -1428,6 +1656,10 @@
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/cd0780a5fc0ac2bf8fcab862815b2aeb/res/drawable/notification_icon_background.xml"
     },
     {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-ldpi-v4_ucrop_ic_done.png.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/drawable-ldpi-v4/ucrop_ic_done.png"
+    },
+    {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable-mdpi-v4/abc_btn_switch_to_on_mtrl_00012.9.png"
     },
@@ -1446,6 +1678,10 @@
     {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable-xhdpi-v4/abc_btn_switch_to_on_mtrl_00012.9.png"
+    },
+    {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_ucrop_ic_reset.png.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/drawable-xhdpi-v4/ucrop_ic_reset.png"
     },
     {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ic_menu_cut_mtrl_alpha.png.flat",
@@ -1496,12 +1732,20 @@
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/layout/abc_screen_toolbar.xml"
     },
     {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-ldpi-v4_ucrop_ic_crop.png.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/drawable-ldpi-v4/ucrop_ic_crop.png"
+    },
+    {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable_abc_item_background_holo_light.xml.flat",
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable/abc_item_background_holo_light.xml"
     },
     {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_cab_background_top_mtrl_alpha.9.png.flat",
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable-mdpi-v4/abc_cab_background_top_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_ucrop_ic_scale.png.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/drawable-xhdpi-v4/ucrop_ic_scale.png"
     },
     {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable_abc_btn_colored_material.xml.flat",
@@ -1544,6 +1788,10 @@
         "source": "/home/mustafa/Documents/auric/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
     },
     {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_ucrop_ic_done.png.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/drawable-xxhdpi-v4/ucrop_ic_done.png"
+    },
+    {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable-xhdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png"
     },
@@ -1580,8 +1828,16 @@
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable-hdpi-v4/abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/layout_ucrop_controls.xml.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/layout/ucrop_controls.xml"
+    },
+    {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-ldrtl-mdpi-v17_abc_ic_menu_cut_mtrl_alpha.png.flat",
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable-ldrtl-mdpi-v17/abc_ic_menu_cut_mtrl_alpha.png"
+    },
+    {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_ucrop_ic_angle.png.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/drawable-hdpi-v4/ucrop_ic_angle.png"
     },
     {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable_abc_ic_voice_search_api_material.xml.flat",
@@ -1618,5 +1874,9 @@
     {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_ab_share_pack_mtrl_alpha.9.png.flat",
         "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/drawable-xhdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_ucrop_ic_angle.png.flat",
+        "source": "/home/mustafa/.gradle/caches/transforms-1/files-1.1/ucrop-2.2.2-native.aar/a8ce7dcae09b7b0e76162408e4e5c046/res/drawable-xxhdpi-v4/ucrop_ic_angle.png"
     }
 ]

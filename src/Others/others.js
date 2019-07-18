@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { AsyncStorage, KeyboardAvoidingView, ScrollView, View, TouchableOpacity, StatusBar } from 'react-native';
-import { Container, Header, Content, Card, CardItem, Text, Body } from 'native-base';
+import { Container, Header, Content, Card, CardItem, Text, Body, Left } from 'native-base';
 import { onSignOut, USER_KEY, USER } from "../../auth";
+import { withNavigationFocus } from "react-navigation";
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import axios from 'axios';
 import Styles from '../styles';
@@ -33,6 +34,16 @@ class Others extends Component {
             busy: true,
         }
     }
+
+    componentDidUpdate(prevProps) {
+        console.log('try')
+        if (prevProps.isFocused !== this.props.isFocused) {
+          // Use the `this.props.isFocused` boolean
+          // Call any action
+          console.log('try success')
+          this.fetch();
+        }
+      }
 
     componentDidMount(){
         this.fetch();
@@ -91,14 +102,14 @@ class Others extends Component {
                                       <Text>{item.user.name}</Text>
                                     </CardItem>
                                     <CardItem>
-                                      <Body>
-                                        <Text>
-                                          Sales:- {item.mind_o}
-                                        </Text>
-                                        <Text>
-                                          {item.location}, {item.city}
-                                        </Text>
-                                      </Body>
+                                        <Left>
+                                            <Text>
+                                              Sales:- {item.sales}
+                                            </Text>
+                                            <Text>
+                                              {item.location}, {item.city}
+                                            </Text>
+                                        </Left>
                                     </CardItem>
                                   </Card>
                             )
@@ -110,4 +121,4 @@ class Others extends Component {
     }
 }
 
-export default Others;
+export default withNavigationFocus(Others);

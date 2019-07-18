@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { AsyncStorage, KeyboardAvoidingView, ScrollView, View, TouchableOpacity, StatusBar } from 'react-native';
 import { Container, Header, Content, Card, CardItem, Text, Body, Right, Left} from 'native-base';
 import { onSignOut, USER_KEY, USER } from "../../auth";
+import { withNavigationFocus } from "react-navigation";
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import axios from 'axios';
 import Styles from '../styles';
@@ -34,6 +35,16 @@ class Submissions extends Component {
         }
     }
 
+    componentDidUpdate(prevProps) {
+        console.log('try')
+        if (prevProps.isFocused !== this.props.isFocused) {
+          // Use the `this.props.isFocused` boolean
+          // Call any action
+          console.log('try success')
+          this.fetch();
+        }
+      }
+
     componentDidMount(){
         this.fetch();
     }
@@ -45,7 +56,7 @@ class Submissions extends Component {
                 token = res;
             })
             .catch(err => console.log(err));
-        await axios.get('http://192.168.43.55:8000/api/form/?onlyMy=true', {
+        await axios.get('http://192.168.43.55:8000/api/form/?myOnly=true', {
             headers: {
             Authorization: 'Token ' + token //the token is a variable which holds the token
             },
@@ -93,7 +104,7 @@ class Submissions extends Component {
                                     <CardItem>
                                         <Left>
                                             <Text>
-                                              Sales:- {item.mind_o}
+                                              Sales:- {item.sales}
                                             </Text>
                                             <Text>
                                               {item.location}, {item.city}
@@ -113,4 +124,4 @@ class Submissions extends Component {
     }
 }
 
-export default Submissions;
+export default withNavigationFocus(Submissions);

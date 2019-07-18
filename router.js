@@ -3,7 +3,8 @@ import { Platform, StatusBar } from "react-native";
 import { createDrawerNavigator, createSwitchNavigator, createStackNavigator } from 'react-navigation';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import Settings from './src/Settings';  //Tab Nav
-import FormTab from './src/FormTab'; //Stack Nav
+import FormTab from './src/FormTab';
+import AddUser from './src/AddUser'; //Stack Nav
 import LoginScreen from './src/LoginScreen';
 import Drawer from './src/Drawer/Drawer';
 import Others from './src/Others';
@@ -51,7 +52,7 @@ export const DrawerNavigatorIntern = createDrawerNavigator({
 
 export const DrawerNavigatorAdmin = createDrawerNavigator({
   AddUser: {
-    screen: Others,
+    screen: AddUser,
     navigationOptions: {
       drawerLabel: 'Add User',
       drawerIcon: ({ tintColor }) => <Icon name="user-circle" size={17} />,

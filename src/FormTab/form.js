@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import ReactNative, { AsyncStorage, KeyboardAvoidingView, ScrollView, View, TouchableOpacity, StatusBar } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import Styles from '../styles';
-import { Container, Header, Button, Text, Content, Form, Item, Picker, Input, Label } from 'native-base';
-import { onSignOut, USER_KEY, USER } from "../../auth";
+import ImagePicker from 'react-native-image-crop-picker';
+import { Container, Header, Button, Text, Content, Form, Item, Picker, Input, Label, Toast } from 'native-base';
+import { onSignOut, USER_KEY, USER, USER_NAME } from "../../auth";
 import axios from 'axios';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
@@ -31,8 +32,8 @@ class FormTab extends Component {
         super(props);
         this.state = {
             user:'',
-            location:'',
-            city:'',
+            location:'...',
+            city:'...',
             mind_o:'',
             body_o:'',
             skin_o:'',
@@ -41,20 +42,55 @@ class FormTab extends Component {
             body_c:'',
             skin_c:'',
             multipack_c:'',
-            jumboCombos:''
+            jumboCombos:'',
+            name:''
         }
     }
 
     componentDidMount(){
-        AsyncStorage.getItem(USER)
-            .then(res => {
-                console.log(res)
-                this.setState({ user: res})
-            })
-            .catch(err => console.log(err));
+        this.getInitialData();
     }
 
-    async handleSubmit(){
+    async getInitialData(){
+        const user = await AsyncStorage.getItem(USER);
+        const name = await AsyncStorage.getItem(USER_NAME);
+        this.setState({ user, name})
+    }
+
+    selectImages(){
+        ImagePicker.openPicker({
+          multiple: true
+        }).then(images => {
+          console.log(images);
+        });
+    }
+
+    validateData(){
+        this.selectImages();
+        if( this.state.city === '...' || 
+            this.state.location === '...' ||
+            this.state.mind_o === '' || 
+            this.state.body_o === '' ||
+            this.state.skin_o === '' ||
+            this.state.multipack_o === '' ||
+            this.state.mind_c === '' || 
+            this.state.body_c === '' ||
+            this.state.skin_c === '' ||
+            this.state.multipack_c === '' ||
+            this.state.jumboCombos === ''
+        ){
+            Toast.show({
+                text: "Please fill in the form.",
+                buttonText: "Okay",
+                duration: 2000
+              })
+            return false
+        }else{
+            return true
+        }
+    }
+
+    async submitForm(){
         const data = {
             "city": this.state.city,
             "location": this.state.location,
@@ -89,6 +125,12 @@ class FormTab extends Component {
           });
     }
 
+    async handleSubmit(){
+        if(this.validateData()){
+            this.submitForm();
+        }
+    }
+
     _scrollToInput (reactNode: any) {
       // Add a 'scroll' ref to your ScrollView
       this.scroll.props.scrollToFocusedInput(reactNode)
@@ -114,12 +156,9 @@ class FormTab extends Component {
                         placeholderStyle={{ color: "#bfc6ea" }}
                         placeholderIconColor="#007aff"
                         selectedValue={this.state.user}
+                        disabled
                       >
-                        <Picker.Item label="Name" value="..." />
-                        <Picker.Item label="Mohit Nagpal" value="key1" />
-                        <Picker.Item label="Chahat Goyal" value="key2" />
-                        <Picker.Item label="Diksha Sharma" value="key3" />
-                        <Picker.Item label="Shrey Rohatgi" value="key4" />
+                        <Picker.Item label={this.state.name} value={this.state.user} />
                       </Picker>
                     </Item>
                     <Item picker style={{marginTop:4}}>
@@ -299,3 +338,11 @@ class FormTab extends Component {
 }
 
 export default FormTab;
+
+const options = {
+  title: 'Select Images',
+  storageOptions: {
+    skipBackup: true,
+    path: 'images',
+  },
+};

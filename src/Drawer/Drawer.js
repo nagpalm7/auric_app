@@ -77,10 +77,30 @@ class Drawer extends Component {
           {
             type === 'admin' &&
             <List>
-              <TouchableNativeFeedback onPress={() => { this.navigateToScreen('Others'); }}>
-                <ListItem selected={this.props.activeItemKey === 'Others'}>
+              <TouchableNativeFeedback onPress={() => { this.navigateToScreen('AddUser'); }}>
+                <ListItem selected={this.props.activeItemKey === 'AddUser'}>
                   <Left>
-                    <Text>Other's Submissions</Text>
+                    <Text>Add User</Text>
+                  </Left>
+                  <Right>
+                    <Icon name="arrow-forward" />
+                  </Right>
+                </ListItem>
+              </TouchableNativeFeedback>
+              <TouchableNativeFeedback onPress={() => { this.navigateToScreen('Users'); }}>
+                <ListItem selected={this.props.activeItemKey === 'Users'}>
+                  <Left>
+                    <Text>Users</Text>
+                  </Left>
+                  <Right>
+                    <Icon name="arrow-forward" />
+                  </Right>
+                </ListItem>
+              </TouchableNativeFeedback>
+              <TouchableNativeFeedback onPress={() => { this.navigateToScreen('Reports'); }}>
+                <ListItem selected={this.props.activeItemKey === 'Reports'}>
+                  <Left>
+                    <Text>Reports</Text>
                   </Left>
                   <Right>
                     <Icon name="arrow-forward" />
