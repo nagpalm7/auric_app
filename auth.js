@@ -1,5 +1,6 @@
 import { AsyncStorage } from "react-native";
 import axios from 'axios';
+import { base_url } from './base_url';
 
 export const USER_KEY = "token";
 export const USER = "user";
@@ -9,7 +10,7 @@ export const USER_TYPE = "type";
 
 export const onSignIn = (username, password, navigation, setErrors=null) => {
   console.log('Sign In with ', username, password)
-  axios.post('http://192.168.43.55:8000/api-token-auth/', {
+  axios.post(base_url + '/api-token-auth/', {
     username: username,
     password: password
   })
@@ -17,7 +18,7 @@ export const onSignIn = (username, password, navigation, setErrors=null) => {
     if(res.data.token){
       console.log('token',res.data);
       AsyncStorage.setItem(USER_KEY, res.data.token);
-      axios.get('http://192.168.43.55:8000/api/get-user/', {
+      axios.get(base_url + '/api/get-user/', {
       headers: {
             Authorization: 'Token ' + res.data.token //the token is a variable which holds the token
         }

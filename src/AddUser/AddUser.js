@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import ReactNative, { AsyncStorage, KeyboardAvoidingView, ScrollView, View, TouchableOpacity, StatusBar } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import Styles from '../styles';
-import { Container, Header, Button, Text, Content, Form, Item, Picker, Input, Label, Toast } from 'native-base';
+import { Spinner, Container, Header, Button, Text, Content, Form, Item, Picker, Input, Label, Toast } from 'native-base';
 import { onSignOut, USER_KEY, USER, USER_NAME } from "../../auth";
 import axios from 'axios';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import { base_url } from "../../base_url";
 
 class AddUser extends Component {
 
@@ -35,11 +36,9 @@ class AddUser extends Component {
             confirm: '',
             typeOfUser: 'intern',
             name: '',
+            error:null,
+            busy: true
         }
-    }
-
-    componentDidMount(){
-
     }
 
     validateData(){
@@ -71,26 +70,43 @@ class AddUser extends Component {
             "username": this.state.username,
             "password": this.state.password,
             "name": this.state.name,
-            "typeOfUser": this.state.typeOfUser
+            "typeOfUser": this.state.typeOfUser,
         }
         console.log(data)
         let token = null
-        await AsyncStorage.getItem(USER_KEY)
-            .then(res => {
-                token = res;
-            })
-            .catch(err => console.log(err));
-        axios.post('http://192.168.43.55:8000/api/user/', data, {
-            headers: {
-            Authorization: 'Token ' + token //the token is a variable which holds the token
-            },
-          })
-          .then((res)=>{
-            console.log(res)
-          })
-          .catch((err)=>{
-            console.log('error', err);
-          });
+        this.setState({busy:true}, async ()=>{
+            await AsyncStorage.getItem(USER_KEY)
+                .then(res => {
+                    token = res;
+                })
+                .catch(err => console.log(err));
+            axios.post(base_url + '/api/user/', data, {
+                headers: {
+                Authorization: 'Token ' + token //the token is a variable which holds the token
+                },
+              })
+              .then((res)=>{
+                console.log(res.data)
+                this.setState({
+                    error: null
+                }, ()=>{
+                    Toast.show({
+                        text: "User Added Successfully",
+                        buttonText: "Okay",
+                        duration: 2000
+                      })
+                    this.setState({ })
+                    this.props.navigation.navigate('AddUser')
+                })
+              })
+              .catch((err)=>{
+                    console.log('try error', err.response.data);
+                    this.setState({
+                        error: "User with same username exists.",
+                        busy: false
+                    })
+              });
+        })
     }
 
     async handleSubmit(){
@@ -105,9 +121,18 @@ class AddUser extends Component {
     }
 
     render() {
+
+        const { error, busy } = this.state;
+
         return (
             <View style={Styles.container}>
                 <StatusBar backgroundColor="#d0a44c" barStyle="light-content" />
+                { 
+                    busy && 
+                    <View style={Styles.loadingContainer}>
+                        <Spinner color="#cd9930" />
+                    </View>
+                }
                 <View>
                     <KeyboardAwareScrollView
                     innerRef={ref => {
@@ -116,6 +141,8 @@ class AddUser extends Component {
                   extraScrollHeight={50}
                   >
                   <Form>
+                  {error !== null && 
+                        <Text style={Styles.error}>{error}</Text>}
                     <Item picker style={{marginTop:4}}>
                       <Picker
                         mode="dropdown"

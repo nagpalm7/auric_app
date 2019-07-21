@@ -8,6 +8,7 @@ import AddUser from './src/AddUser'; //Stack Nav
 import LoginScreen from './src/LoginScreen';
 import Drawer from './src/Drawer/Drawer';
 import Others from './src/Others';
+import Users from './src/Users';
 import Submissions from './src/Submissions';
 
 const headerStyle = {
@@ -59,7 +60,7 @@ export const DrawerNavigatorAdmin = createDrawerNavigator({
     }
   },
   Users: {
-    screen: Others,
+    screen: Users,
     navigationOptions: {
       drawerLabel: 'List Users',
       drawerIcon: ({ tintColor }) => <Icon name="user-circle" size={17} />,

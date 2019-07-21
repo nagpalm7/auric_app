@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import { AsyncStorage, KeyboardAvoidingView, ScrollView, View, TouchableOpacity, StatusBar } from 'react-native';
-import { Container, Header, Content, Card, CardItem, Text, Body, Right, Left} from 'native-base';
+import { Container, Header, Content, Card, CardItem, Text, Body, Left } from 'native-base';
 import { onSignOut, USER_KEY, USER } from "../../auth";
 import { withNavigationFocus } from "react-navigation";
-import { base_url } from "../../base_url";
+import { base_url } from '../../base_url';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import axios from 'axios';
 import Styles from '../styles';
 
-class Submissions extends Component {
+class Users extends Component {
 
     static navigationOptions = ({ navigation }) => ({
-        title: "My Submissions",
+        title: "Users",
         headerLeft: (
             <TouchableOpacity
                 style={Styles.headerButton}
@@ -37,11 +37,9 @@ class Submissions extends Component {
     }
 
     componentDidUpdate(prevProps) {
-        console.log('try')
         if (prevProps.isFocused !== this.props.isFocused) {
           // Use the `this.props.isFocused` boolean
           // Call any action
-          console.log('try success')
           this.fetch();
         }
       }
@@ -57,7 +55,7 @@ class Submissions extends Component {
                 token = res;
             })
             .catch(err => console.log(err));
-        await axios.get(base_url + '/api/form/?myOnly=true', {
+        await axios.get(base_url + '/api/user/', {
             headers: {
             Authorization: 'Token ' + token //the token is a variable which holds the token
             },
@@ -65,21 +63,6 @@ class Submissions extends Component {
           .then(async (res)=>{
             let data = res.data;
             console.log(data)
-            if(data.length > 0){
-                for(var i=0; i<data.length; i++){
-                    await axios.get(data[i].user,{
-                        headers: {
-                        Authorization: 'Token ' + token //the token is a variable which holds the token
-                        },
-                    })
-                    .then(res=>{
-                        console.log(data, i)
-                        data[i].user = res.data;
-                    }).catch(err=>{
-                        console.log(err);
-                    })
-                }
-            }
             this.setState({
                 data: data,
                 busy: false,
@@ -98,22 +81,16 @@ class Submissions extends Component {
                   {
                     this.state.data.map(item=>{
                         return(
-                                <Card button onPress={()=> alert("yipiee")} key={this.state.data.indexOf(item)}>
+                                <Card button key={this.state.data.indexOf(item)}>
                                     <CardItem header style={{paddingBottom: 0}}>
-                                      <Text>{item.user.name}</Text>
+                                      <Text>{item.name.toUpperCase()} ( {item.username} )</Text>
                                     </CardItem>
                                     <CardItem>
                                         <Left>
                                             <Text>
-                                              Sales:- {item.sales}
-                                            </Text>
-                                            <Text>
-                                              {item.location}, {item.city}
+                                              {item.typeOfUser.toUpperCase()}
                                             </Text>
                                         </Left>
-                                        <Right>
-                                            <Icon name="edit" style={{color:"#d0a44c", fontSize:20}}/>
-                                        </Right>
                                     </CardItem>
                                   </Card>
                             )
@@ -125,4 +102,4 @@ class Submissions extends Component {
     }
 }
 
-export default withNavigationFocus(Submissions);
+export default withNavigationFocus(Users);

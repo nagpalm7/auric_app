@@ -4,7 +4,7 @@ import { createAppContainer } from 'react-navigation';
 import { RootNavigator } from "./router";
 import { isSignedIn, USER_KEY, USER, USER_NAME, USER_USERNAME, USER_TYPE } from "./auth";
 import { Root } from 'native-base';
-
+import { base_url } from './base_url';
 import axios from 'axios';
 
 export default class App extends React.Component {
@@ -42,7 +42,7 @@ export default class App extends React.Component {
   		.catch(err => console.log(err));
   	if(token !== null){
       console.log("fetch")
-  		axios.get('http://192.168.43.55:8000/api/get-user/', {
+  		axios.get(base_url + '/api/get-user/', {
   			headers: {
   			   		Authorization: 'Token ' + token //the token is a variable which holds the token
   				}
