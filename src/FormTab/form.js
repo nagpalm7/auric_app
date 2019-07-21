@@ -33,7 +33,7 @@ class FormTab extends Component {
         this.state = {
             user:'',
             location:'...',
-            city:'...',
+            group:'...',
             mind_o:'',
             body_o:'',
             skin_o:'',
@@ -67,7 +67,7 @@ class FormTab extends Component {
 
     validateData(){
         this.selectImages();
-        if( this.state.city === '...' || 
+        if( this.state.group === '...' || 
             this.state.location === '...' ||
             this.state.mind_o === '' || 
             this.state.body_o === '' ||
@@ -92,7 +92,7 @@ class FormTab extends Component {
 
     async submitForm(){
         const data = {
-            "city": this.state.city,
+            "group": this.state.group,
             "location": this.state.location,
             "mind_o": parseInt(this.state.mind_o),
             "body_o": parseInt(this.state.body_o),
@@ -168,12 +168,11 @@ class FormTab extends Component {
                         style={{ width: undefined }}
                         placeholderStyle={{ color: "#bfc6ea" }}
                         placeholderIconColor="#007aff"
-                        selectedValue={this.state.city}
-                        onValueChange={(city)=>{ this.setState({city}) }}
+                        selectedValue={this.state.group}
+                        onValueChange={(group)=>{ this.setState({group}) }}
                       >
-                        <Picker.Item label="City" value="..." />
-                        <Picker.Item label="Tricity" value="Tricity" />
-                        <Picker.Item label="Delhi" value="Delhi" />
+                        <Picker.Item label="Group" value="..." />
+                        
                       </Picker>
                     </Item>
                     <Item picker style={{marginTop:4}}>
@@ -187,8 +186,6 @@ class FormTab extends Component {
                         onValueChange={(location)=>{ this.setState({location}) }}
                       >
                         <Picker.Item label="Location" value="..." />
-                        <Picker.Item label="Tricity" value="Tricity" />
-                        <Picker.Item label="Delhi" value="Delhi" />
                       </Picker>
                     </Item>
                     <Text style={Styles.formLabel}>Opening Stock</Text>
