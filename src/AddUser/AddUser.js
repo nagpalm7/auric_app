@@ -11,7 +11,7 @@ import { base_url } from "../../base_url";
 class AddUser extends Component {
 
     static navigationOptions = ({ navigation }) => ({
-        title: "Form",
+        title: "Add New User",
         headerLeft: (
             <TouchableOpacity
                 style={Styles.headerButton}
@@ -37,7 +37,7 @@ class AddUser extends Component {
             typeOfUser: 'intern',
             name: '',
             error:null,
-            busy: true
+            busy: false
         }
     }
 
@@ -95,7 +95,7 @@ class AddUser extends Component {
                         buttonText: "Okay",
                         duration: 2000
                       })
-                    this.setState({ })
+                    this.setState({busy: false, username:'', name:'', password:'', confirm:''})
                     this.props.navigation.navigate('AddUser')
                 })
               })

@@ -4,7 +4,8 @@ export default StyleSheet.create({
     loadingContainer:{
         position: 'absolute',
         justifyContent:'center',
-        left: '45%'
+        left: '45%',
+        flex:1
     },
     container: {
         paddingTop: 16,

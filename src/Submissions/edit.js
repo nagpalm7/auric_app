@@ -12,12 +12,12 @@ import {base_url} from "../../base_url";
 class FormTab extends Component {
 
     static navigationOptions = ({ navigation }) => ({
-        title: "Form",
+        title: "Edit Submission",
         headerLeft: (
             <TouchableOpacity
                 style={Styles.headerButton}
-                onPress={() => navigation.openDrawer()}>
-                <Icon name="bars" size={20} style={{color:"#fff"}}/>
+                onPress={() => navigation.goBack()}>
+                <Icon name="arrow-left" size={20} style={{color:"#fff"}}/>
             </TouchableOpacity>
         ),
         headerStyle:{
@@ -58,13 +58,28 @@ class FormTab extends Component {
     }
 
     async getInitialData(){
+        let data = this.props.navigation.getParam('data')
         const user = await AsyncStorage.getItem(USER);
         const name = await AsyncStorage.getItem(USER_NAME);
         this.setState({ user, name})
         await this.getData();
+        console.log("before", this.state)
         this.setState({
-            busyFull: false
-        })
+                busyFull: false,
+                locations_used: this.state.locations.filter(item => item.group === parseInt(data.group.split('/')[5])),
+                location: data.location.pk,
+                group: parseInt(data.group.split('/')[5]),
+                mind_o: data.mind_o,
+                body_o: data.body_o,
+                skin_o: data.skin_o,
+                multipack_o: data.multipack_o,
+                mind_c: data.mind_c,
+                body_c: data.body_c,
+                skin_c: data.skin_c,
+                multipack_c: data.multipack_c,
+                jumboCombos: data.jumbo_combos,
+                pk: data.url.split('/')[5]
+            },()=>console.log(this.state))
     }
 
     selectImages(){
@@ -76,7 +91,6 @@ class FormTab extends Component {
     }
 
     async getData(){
-        console.log('fetching locations')
         let token;
         await AsyncStorage.getItem(USER_KEY)
             .then(res => {
@@ -85,14 +99,13 @@ class FormTab extends Component {
             .catch(err => console.log(err));
         console.log("token", token);
 
-        axios.get(base_url + '/api/group/', {
+        await axios.get(base_url + '/api/group/', {
             headers: {
             Authorization: 'Token ' + token //the token is a variable which holds the token
             },
           })
-          .then(async (res)=>{
+          .then((res)=>{
             let data = res.data;
-            console.log(data)
             this.setState({
                 groups: data,
             })
@@ -101,14 +114,13 @@ class FormTab extends Component {
             console.log('error', err.response.data);
           });
 
-          axios.get(base_url + '/api/location/', {
+          await axios.get(base_url + '/api/location/', {
             headers: {
             Authorization: 'Token ' + token //the token is a variable which holds the token
             },
           })
-          .then(async (res)=>{
+          .then((res)=>{
             let data = res.data;
-            console.log(data)
             this.setState({
                 locations: data,
             })
@@ -170,7 +182,7 @@ class FormTab extends Component {
                 token = res;
             })
             .catch(err => console.log(err));
-        axios.post(base_url + '/api/form/', data, {
+        axios.put(base_url + `/api/form/${this.state.pk}/`, data, {
             headers: {
             Authorization: 'Token ' + token //the token is a variable which holds the token
             },
@@ -196,7 +208,7 @@ class FormTab extends Component {
                 skin_c:'',
                 multipack_c:'',
                 jumboCombos:'',
-            },()=>this.props.navigation.navigate("SubmitForm"))
+            },()=>this.props.navigation.goBack())
           })
           .catch((err)=>{
             console.log('error', err);
@@ -277,7 +289,7 @@ class FormTab extends Component {
                       >
                         <Picker.Item label="Group" value="..." />
                         {this.state.groups.map(item=>
-                            <Picker.Item label={item.group} value={item.pk} key={item.pk}/>
+                            <Picker.Item label={item.group} value={item.pk} key={item.pk} />
                         )}
                       </Picker>
                     </Item>
@@ -294,7 +306,7 @@ class FormTab extends Component {
                         <Picker.Item label="Location" value="..." />
                         {this.state.locations_used.map(item=>{
                             // if(item.group === this.state.group.pk)
-                                return <Picker.Item label={item.location} value={item.pk} key={item.pk} />
+                                return <Picker.Item label={item.location} value={item.pk} key={item.pk}  />
                         })}
                       </Picker>
                     </Item>

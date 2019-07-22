@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { AsyncStorage, KeyboardAvoidingView, ScrollView, View, TouchableOpacity, StatusBar } from 'react-native';
-import { Container, Header, Content, Card, CardItem, Text, Body, Left } from 'native-base';
+import { Container, Header, Content, Card, CardItem, Text, Body, Left, Spinner } from 'native-base';
 import { onSignOut, USER_KEY, USER } from "../../auth";
 import { withNavigationFocus } from "react-navigation";
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import axios from 'axios';
 import Styles from '../styles';
+import {base_url} from "../../base_url";
 
 class Others extends Component {
 
@@ -40,8 +41,9 @@ class Others extends Component {
         if (prevProps.isFocused !== this.props.isFocused) {
           // Use the `this.props.isFocused` boolean
           // Call any action
-          console.log('try success')
-          this.fetch();
+          this.setState({busy:true},()=>{
+            this.fetch();
+          })
         }
       }
 
@@ -56,7 +58,7 @@ class Others extends Component {
                 token = res;
             })
             .catch(err => console.log(err));
-        await axios.get('http://192.168.43.55:8000/api/form/', {
+        await axios.get(base_url + '/api/form/', {
             headers: {
             Authorization: 'Token ' + token //the token is a variable which holds the token
             },
@@ -77,6 +79,18 @@ class Others extends Component {
                     }).catch(err=>{
                         console.log(err);
                     })
+
+                    await axios.get(data[i].location,{
+                        headers: {
+                        Authorization: 'Token ' + token //the token is a variable which holds the token
+                        },
+                    })
+                    .then(res=>{
+                        console.log(data, i)
+                        data[i].location = res.data;
+                    }).catch(err=>{
+                        console.log(err);
+                    })
                 }
             }
             this.setState({
@@ -90,6 +104,12 @@ class Others extends Component {
     }
 
     render() {
+        if(this.state.busy)
+            return(
+                    <View style={Styles.loadingContainer}>
+                        <Spinner color="#cd9930" />
+                    </View>
+                )
         return (
             <Container style={Styles.container}>
                 <StatusBar backgroundColor="#d0a44c" barStyle="light-content" />
@@ -107,11 +127,11 @@ class Others extends Component {
                                               Sales:- {item.sales}
                                             </Text>
                                             <Text>
-                                              {item.location}, {item.city}
+                                              ( {item.location.location} )
                                             </Text>
                                         </Left>
                                     </CardItem>
-                                  </Card>
+                                </Card>
                             )
                     })
                   }

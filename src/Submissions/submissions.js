@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { AsyncStorage, KeyboardAvoidingView, ScrollView, View, TouchableOpacity, StatusBar } from 'react-native';
-import { Container, Header, Content, Card, CardItem, Text, Body, Right, Left} from 'native-base';
+import { AsyncStorage, KeyboardAvoidingView, ScrollView, View, TouchableOpacity, TouchableNativeFeedback, StatusBar } from 'react-native';
+import { Container, Header, Content, Card, CardItem, Text, Body, Right, Left, Spinner} from 'native-base';
 import { onSignOut, USER_KEY, USER } from "../../auth";
 import { withNavigationFocus } from "react-navigation";
 import { base_url } from "../../base_url";
@@ -41,7 +41,6 @@ class Submissions extends Component {
         if (prevProps.isFocused !== this.props.isFocused) {
           // Use the `this.props.isFocused` boolean
           // Call any action
-          console.log('try success')
           this.fetch();
         }
       }
@@ -57,7 +56,7 @@ class Submissions extends Component {
                 token = res;
             })
             .catch(err => console.log(err));
-        await axios.get(base_url + '/api/form/?myOnly=true', {
+        await axios.get(base_url + '/api/form/?onlyMy=true', {
             headers: {
             Authorization: 'Token ' + token //the token is a variable which holds the token
             },
@@ -73,8 +72,17 @@ class Submissions extends Component {
                         },
                     })
                     .then(res=>{
-                        console.log(data, i)
                         data[i].user = res.data;
+                    }).catch(err=>{
+                        console.log(err);
+                    })
+                    await axios.get(data[i].location,{
+                        headers: {
+                        Authorization: 'Token ' + token //the token is a variable which holds the token
+                        },
+                    })
+                    .then(res=>{
+                        data[i].location = res.data;
                     }).catch(err=>{
                         console.log(err);
                     })
@@ -91,6 +99,12 @@ class Submissions extends Component {
     }
 
     render() {
+        if(this.state.busy)
+            return(
+                    <View style={Styles.loadingContainer}>
+                        <Spinner color="#cd9930" />
+                    </View>
+                )
         return (
             <Container style={Styles.container}>
                 <StatusBar backgroundColor="#d0a44c" barStyle="light-content" />
@@ -98,24 +112,26 @@ class Submissions extends Component {
                   {
                     this.state.data.map(item=>{
                         return(
-                                <Card button onPress={()=> alert("yipiee")} key={this.state.data.indexOf(item)}>
-                                    <CardItem header style={{paddingBottom: 0}}>
-                                      <Text>{item.user.name}</Text>
-                                    </CardItem>
-                                    <CardItem>
-                                        <Left>
-                                            <Text>
-                                              Sales:- {item.sales}
-                                            </Text>
-                                            <Text>
-                                              {item.location}, {item.city}
-                                            </Text>
-                                        </Left>
-                                        <Right>
-                                            <Icon name="edit" style={{color:"#d0a44c", fontSize:20}}/>
-                                        </Right>
-                                    </CardItem>
-                                  </Card>
+                                <TouchableNativeFeedback onPress={()=>this.props.navigation.navigate('EditSubmission', {data: item})} key={this.state.data.indexOf(item)}>
+                                    <Card>
+                                        <CardItem header style={{paddingBottom: 0}}>
+                                          <Text>{item.user.name}</Text>
+                                        </CardItem>
+                                        <CardItem>
+                                            <Left>
+                                                <Text>
+                                                  Sales:- {item.sales}
+                                                </Text>
+                                                <Text>
+                                                  ( {item.location.location} )
+                                                </Text>
+                                            </Left>
+                                            <Right>
+                                                <Icon name="edit" style={{color:"#d0a44c", fontSize:20}}/>
+                                            </Right>
+                                        </CardItem>
+                                    </Card>
+                                </TouchableNativeFeedback>
                             )
                     })
                   }
