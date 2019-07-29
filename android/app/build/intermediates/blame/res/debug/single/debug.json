@@ -1525,7 +1525,7 @@
     },
     {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/xml_provider_paths.xml.flat",
-        "source": "/home/mustafa/Documents/auric/node_modules/react-native-image-crop-picker/android/build/intermediates/packaged_res/debug/xml/provider_paths.xml"
+        "source": "/home/mustafa/Documents/auric/node_modules/react-native-image-picker/android/build/intermediates/packaged_res/debug/xml/provider_paths.xml"
     },
     {
         "merged": "/home/mustafa/Documents/auric/android/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_ucrop_ic_next.png.flat",

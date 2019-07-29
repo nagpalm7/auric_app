@@ -41,7 +41,7 @@ export default class App extends React.Component {
   		})
   		.catch(err => console.log(err));
   	if(token !== null){
-      console.log("fetch")
+      console.log("fetch", token)
   		axios.get(base_url + '/api/get-user/', {
   			headers: {
   			   		Authorization: 'Token ' + token //the token is a variable which holds the token
@@ -60,7 +60,7 @@ export default class App extends React.Component {
           })
       	})
       	.catch((err)=>{
-      	  console.log('error', err);
+      	  console.log('error', err.response.data);
       	});
   	}else{
   		this.setState({
