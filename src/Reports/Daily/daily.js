@@ -8,7 +8,7 @@ import axios from 'axios';
 import Styles from '../../styles';
 import {base_url} from "../../../base_url";
 
-class Others extends Component {
+class Daily extends Component {
 
     static navigationOptions = ({ navigation }) => ({
         title: "Daily Reports",
@@ -19,13 +19,13 @@ class Others extends Component {
                 <Icon name="arrow-left" size={20} style={{color:"#fff"}}/>
             </TouchableOpacity>
         ),
-        headerRight: (
-            <TouchableOpacity
-                style={Styles.headerButton}
-                onPress={() => navigation.navigate('Search')}>
-                <Icon name="search" size={20} style={{color:"#fff"}}/>
-            </TouchableOpacity>
-        ),
+        // headerRight: (
+        //     <TouchableOpacity
+        //         style={Styles.headerButton}
+        //         onPress={() => navigation.navigate('Search')}>
+        //         <Icon name="search" size={20} style={{color:"#fff"}}/>
+        //     </TouchableOpacity>
+        // ),
         headerStyle:{
             backgroundColor: "#cd9930",
             color:"#fff"
@@ -40,7 +40,8 @@ class Others extends Component {
         this.state = {
             data: [],
             busy: true,
-            search: false
+            search: false,
+            filter: null
         }
     }
 
@@ -48,7 +49,7 @@ class Others extends Component {
         if (prevProps.isFocused !== this.props.isFocused) {
           // Use the `this.props.isFocused` boolean
           // Call any action
-          this.setState({busy:true},()=>{
+          this.setState({busy: true},()=>{
             this.fetch();
           })
         }
@@ -59,50 +60,27 @@ class Others extends Component {
     }
 
     async fetch(){
-        let token = null
+        let token = null;
+        let filter = this.props.navigation.dangerouslyGetParent().getParam('filter');
+        let group = this.props.navigation.dangerouslyGetParent().getParam('group');
         await AsyncStorage.getItem(USER_KEY)
             .then(res => {
                 token = res;
             })
             .catch(err => console.log(err));
-        await axios.get(base_url + '/api/reports/', {
+
+        await axios.get(base_url + `/api/reports/?filter=${filter}&group=${group}`, {
             headers: {
             Authorization: 'Token ' + token //the token is a variable which holds the token
             },
           })
           .then(async (res)=>{
             let data = res.data;
-            console.log(data)
-            if(data.length > 0){
-                for(var i=0; i<data.length; i++){
-                    await axios.get(data[i].user,{
-                        headers: {
-                        Authorization: 'Token ' + token //the token is a variable which holds the token
-                        },
-                    })
-                    .then(res=>{
-                        console.log(data, i)
-                        data[i].user = res.data;
-                    }).catch(err=>{
-                        console.log(err);
-                    })
-
-                    await axios.get(data[i].location,{
-                        headers: {
-                        Authorization: 'Token ' + token //the token is a variable which holds the token
-                        },
-                    })
-                    .then(res=>{
-                        console.log(data, i)
-                        data[i].location = res.data;
-                    }).catch(err=>{
-                        console.log(err);
-                    })
-                }
-            }
+            console.log(data. group, filter)
             this.setState({
                 data: data,
                 busy: false,
+                filter: filter
             })
           })
           .catch((err)=>{
@@ -117,6 +95,7 @@ class Others extends Component {
                         <Spinner color="#cd9930" />
                     </View>
                 )
+        if(this.state.filter === 'group')
         return (
             <Container style={Styles.container}>
                 <StatusBar backgroundColor="#d0a44c" barStyle="light-content" />
@@ -126,7 +105,7 @@ class Others extends Component {
                         return(
                                 <Card button onPress={()=> alert("yipiee")} key={this.state.data.indexOf(item)}>
                                     <CardItem header style={{paddingBottom: 0}}>
-                                      <Text>{item.user.name}</Text>
+                                      <Text>{item.user.toUpperCase()}</Text>
                                     </CardItem>
                                     <CardItem>
                                         <Left>
@@ -134,7 +113,32 @@ class Others extends Component {
                                               Sales:- {item.sales}
                                             </Text>
                                             <Text>
-                                              ( {item.location.location} )
+                                              Productivity:- {item.productivity}
+                                            </Text>
+                                        </Left>
+                                    </CardItem>
+                                </Card>
+                            )
+                    })
+                  }
+                </Content>
+            </Container>
+        );
+        return (
+            <Container style={Styles.container}>
+                <StatusBar backgroundColor="#d0a44c" barStyle="light-content" />
+                <Content>
+                  {
+                    this.state.data.map(item=>{
+                        return(
+                                <Card button onPress={()=> alert("yipiee")} key={this.state.data.indexOf(item)}>
+                                    <CardItem header style={{paddingBottom: 0}}>
+                                      <Text>{item.location.toUpperCase()}</Text>
+                                    </CardItem>
+                                    <CardItem>
+                                        <Left>
+                                            <Text>
+                                              Sales:- {item.sales}
                                             </Text>
                                         </Left>
                                     </CardItem>
@@ -148,4 +152,4 @@ class Others extends Component {
     }
 }
 
-export default withNavigationFocus(Others);
+export default withNavigationFocus(Daily);

@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Mon Jul 29 10:34:42 IST 2019
+#Mon Jul 29 12:59:31 IST 2019
 56.path=lib/armeabi-v7a/libimagepipeline.so
 5.base=/home/mustafa/Documents/auric/android/app/build/intermediates/transforms/mergeJniLibs/debug/0
 42.base=/home/mustafa/Documents/auric/android/app/build/intermediates/transforms/mergeJniLibs/debug/0

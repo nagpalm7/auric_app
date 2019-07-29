@@ -2,6 +2,8 @@ import React from 'react';
 import { createBottomTabNavigator, createStackNavigator } from 'react-navigation';
 import {Icon} from "native-base";
 import Daily from "./Daily";
+import Monthly from "./Monthly";
+import Weekly from "./Weekly";
 
 const Reports = createBottomTabNavigator({
     Daili: {
@@ -19,7 +21,7 @@ const Reports = createBottomTabNavigator({
         }
     },
     Weekly: {
-        screen: Daily,
+        screen: Weekly,
         navigationOptions: {
             title: "Weekly Reports",
             tabBarIcon: ({ tintColor }) => {
@@ -33,7 +35,7 @@ const Reports = createBottomTabNavigator({
         }
     },
     Monthly: {
-        screen: Daily,
+        screen: Monthly,
         navigationOptions: {
             title: "Monthly Reports",
             tabBarIcon: ({ tintColor }) => (

@@ -77,7 +77,7 @@ class Groups extends Component {
                 <View style={{flexWrap: 'wrap', alignItems: 'flex-start', flexDirection:'row',}}>
                     {this.state.data.map(item=>(
                             <View style={{ height: '40%', marginRight: '4%', marginBottom: '4%', width:'46%',  flexDirection:'column',}} key={item.pk}>
-                                <TouchableNativeFeedback onPress={()=>{this.props.navigation.navigate('TabNavigator')}}>
+                                <TouchableNativeFeedback onPress={()=>{this.props.navigation.navigate('TabNavigator', {filter:'group', group: item.pk})}}>
                                     <Card style={{height:'100%', width:'100%', backgroundColor:'#cd9930', justifyContent: 'center'}}>
                                         <CardItem>
                                           <Body>

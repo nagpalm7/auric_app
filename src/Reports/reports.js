@@ -31,7 +31,7 @@ class Reports extends Component {
                 <StatusBar backgroundColor="#d0a44c" barStyle="light-content" />
                 <Grid>
                     <Col style={{ height: '40%', marginRight: 20 }}>
-                        <TouchableNativeFeedback onPress={()=>{this.props.navigation.navigate('TabNavigator')}}>
+                        <TouchableNativeFeedback onPress={()=>{this.props.navigation.navigate('TabNavigator', {filter:'location', group: 'null'})}}>
                         <Card style={{height:'100%', width:'100%', backgroundColor:'#cd9930', justifyContent: 'center'}}>
                             <CardItem>
                               <Body>
