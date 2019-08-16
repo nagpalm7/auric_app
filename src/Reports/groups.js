@@ -74,23 +74,17 @@ class Groups extends Component {
         return (
             <Container style={Styles.container}>
                 <StatusBar backgroundColor="#d0a44c" barStyle="light-content" />
-                <View style={{flexWrap: 'wrap', alignItems: 'flex-start', flexDirection:'row',}}>
+                <Content>
                     {this.state.data.map(item=>(
-                            <View style={{ height: '40%', marginRight: '4%', marginBottom: '4%', width:'46%',  flexDirection:'column',}} key={item.pk}>
-                                <TouchableNativeFeedback onPress={()=>{this.props.navigation.navigate('TabNavigator', {filter:'group', group: item.pk})}}>
-                                    <Card style={{height:'100%', width:'100%', backgroundColor:'#cd9930', justifyContent: 'center'}}>
-                                        <CardItem>
-                                          <Body>
-                                            <Text style={{color: "#cd9930", textAlign: 'center', width: '100%'}}>
-                                               {item.group}
-                                            </Text>
-                                          </Body>
-                                        </CardItem>
-                                    </Card>
-                                    </TouchableNativeFeedback>
-                                </View>
+                        <TouchableNativeFeedback onPress={()=>{this.props.navigation.navigate('TabNavigator', {filter:'group', group: item.pk})}}>
+                            <Card button key={this.state.data.indexOf(item)}>
+                                <CardItem header>
+                                  <Text>{item.group}</Text>
+                                </CardItem> 
+                              </Card>
+                        </TouchableNativeFeedback>
                         ))}
-                </View>
+                </Content>
             </Container>
         );
     }

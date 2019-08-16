@@ -3,6 +3,7 @@ import { createStackNavigator } from 'react-navigation';
 import Reports from './reports';
 import Groups from './groups';
 import TabNavigator from './TabNavigator';
+import Search from "./search";
 
 export default createStackNavigator({
     Reports:{
@@ -17,4 +18,7 @@ export default createStackNavigator({
     		header: null
     	}
     },
+    Search:{
+        screen: Search
+    }
 });

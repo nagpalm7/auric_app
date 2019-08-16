@@ -1,16 +1,16 @@
 # Referenced at /home/mustafa/Documents/auric/android/app/build/intermediates/merged_manifests/release/AndroidManifest.xml:14
 -keep class android.support.v4.app.CoreComponentFactory { <init>(); }
-# Referenced at /home/mustafa/Documents/auric/android/app/build/intermediates/merged_manifests/release/AndroidManifest.xml:44
+# Referenced at /home/mustafa/Documents/auric/android/app/build/intermediates/merged_manifests/release/AndroidManifest.xml:45
 -keep class android.support.v4.content.FileProvider { <init>(); }
-# Referenced at /home/mustafa/Documents/auric/android/app/build/intermediates/merged_manifests/release/AndroidManifest.xml:22
+# Referenced at /home/mustafa/Documents/auric/android/app/build/intermediates/merged_manifests/release/AndroidManifest.xml:23
 -keep class com.auric.MainActivity { <init>(); }
 # Referenced at /home/mustafa/Documents/auric/android/app/build/intermediates/merged_manifests/release/AndroidManifest.xml:14
 -keep class com.auric.MainApplication { <init>(); }
-# Referenced at /home/mustafa/Documents/auric/android/app/build/intermediates/merged_manifests/release/AndroidManifest.xml:33
+# Referenced at /home/mustafa/Documents/auric/android/app/build/intermediates/merged_manifests/release/AndroidManifest.xml:34
 -keep class com.facebook.react.devsupport.DevSettingsActivity { <init>(); }
-# Referenced at /home/mustafa/Documents/auric/android/app/build/intermediates/merged_manifests/release/AndroidManifest.xml:35
+# Referenced at /home/mustafa/Documents/auric/android/app/build/intermediates/merged_manifests/release/AndroidManifest.xml:36
 -keep class com.imagepicker.FileProvider { <init>(); }
-# Referenced at /home/mustafa/Documents/auric/android/app/build/intermediates/merged_manifests/release/AndroidManifest.xml:54
+# Referenced at /home/mustafa/Documents/auric/android/app/build/intermediates/merged_manifests/release/AndroidManifest.xml:55
 -keep class com.yalantis.ucrop.UCropActivity { <init>(); }
 # Referenced at /home/mustafa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/12e8830d13d5d7b14f099494f8c9779f/res/layout/abc_alert_dialog_material.xml:41
 -keep class android.support.v4.widget.NestedScrollView { <init>(android.content.Context, android.util.AttributeSet); }

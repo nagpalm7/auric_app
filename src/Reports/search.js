@@ -8,19 +8,26 @@ import axios from 'axios';
 import Styles from '../styles';
 import {base_url} from "../../base_url";
 
-class Others extends Component {
+class Search extends Component {
 
     static navigationOptions = ({ navigation }) => ({
         headerLeft: (
             <TouchableOpacity
                 style={Styles.headerButton}
                 onPress={() => navigation.goBack()}>
-                <Icon name="arrow-left" size={20} style={{color:"black"}}/>
+                <Icon name="arrow-left" size={20} style={{color:"white"}}/>
             </TouchableOpacity>
         ),
         headerTitle:(
                 <Item>
-                    <Input placeholder={'Search'}/>
+                    <Input 
+                        placeholder={'Search'}
+                        placeholderTextColor={'white'}
+                        underlineColorAndroid={'white'}
+                        style={{color: 'white'}}
+                        autoFocus
+                        onChangeText={(search)=>navigation.state.params.handleChange(search)}
+                        />
                 </Item>
             ),
         headerStyle:{
@@ -36,75 +43,34 @@ class Others extends Component {
         super(props);
         this.state = {
             data: [],
-            busy: true,
-            search: false
+            renderData: [],
+            search: '',
+            busy:false,
         }
     }
-
-    componentDidUpdate(prevProps) {
-        if (prevProps.isFocused !== this.props.isFocused) {
-          // Use the `this.props.isFocused` boolean
-          // Call any action
-          this.setState({busy:true},()=>{
-            this.fetch();
-          })
-        }
-      }
 
     componentDidMount(){
-        this.fetch();
+        this.props.navigation.setParams({
+            handleChange: this.handleChange.bind(this)
+        });
+        this.setState({
+            filter: this.props.navigation.getParam('filter'),
+            data: this.props.navigation.getParam('data'),
+            renderData: this.props.navigation.getParam('data'),
+        })
     }
 
-    async fetch(){
-        let token = null
-        await AsyncStorage.getItem(USER_KEY)
-            .then(res => {
-                token = res;
-            })
-            .catch(err => console.log(err));
-        await axios.get(base_url + '/api/reports/', {
-            headers: {
-            Authorization: 'Token ' + token //the token is a variable which holds the token
-            },
-          })
-          .then(async (res)=>{
-            let data = res.data;
-            console.log(data)
-            if(data.length > 0){
-                for(var i=0; i<data.length; i++){
-                    await axios.get(data[i].user,{
-                        headers: {
-                        Authorization: 'Token ' + token //the token is a variable which holds the token
-                        },
-                    })
-                    .then(res=>{
-                        console.log(data, i)
-                        data[i].user = res.data;
-                    }).catch(err=>{
-                        console.log(err);
-                    })
-
-                    await axios.get(data[i].location,{
-                        headers: {
-                        Authorization: 'Token ' + token //the token is a variable which holds the token
-                        },
-                    })
-                    .then(res=>{
-                        console.log(data, i)
-                        data[i].location = res.data;
-                    }).catch(err=>{
-                        console.log(err);
-                    })
-                }
-            }
-            this.setState({
-                data: data,
-                busy: false,
-            })
-          })
-          .catch((err)=>{
-            console.log('error', err);
-          });
+    handleChange(search){
+        let renderData = [];
+        if(this.state.filter === 'location'){
+            renderData = this.state.data.filter(item=>(item.location.toLowerCase().includes(search.toLowerCase())))
+        }else{
+            renderData = this.state.data.filter(item=>(item.user.toLowerCase().includes(search.toLowerCase())))
+        }
+        this.setState({
+            search,
+            renderData
+        })
     }
 
     render() {
@@ -114,16 +80,17 @@ class Others extends Component {
                         <Spinner color="#cd9930" />
                     </View>
                 )
+        if(this.state.filter === 'group')
         return (
             <Container style={Styles.container}>
                 <StatusBar backgroundColor="#d0a44c" barStyle="light-content" />
                 <Content>
                   {
-                    this.state.data.map(item=>{
+                    this.state.renderData.map(item=>{
                         return(
-                                <Card button onPress={()=> alert("yipiee")} key={this.state.data.indexOf(item)}>
+                                <Card key={this.state.renderData.indexOf(item)}>
                                     <CardItem header style={{paddingBottom: 0}}>
-                                      <Text>{item.user.name}</Text>
+                                      <Text>{item.user.toUpperCase()}</Text>
                                     </CardItem>
                                     <CardItem>
                                         <Left>
@@ -131,7 +98,32 @@ class Others extends Component {
                                               Sales:- {item.sales}
                                             </Text>
                                             <Text>
-                                              ( {item.location.location} )
+                                              Productivity:- {item.productivity}
+                                            </Text>
+                                        </Left>
+                                    </CardItem>
+                                </Card>
+                            )
+                    })
+                  }
+                </Content>
+            </Container>
+        );
+        return (
+            <Container style={Styles.container}>
+                <StatusBar backgroundColor="#d0a44c" barStyle="light-content" />
+                <Content>
+                  {
+                    this.state.renderData.map(item=>{
+                        return(
+                                <Card key={this.state.renderData.indexOf(item)}>
+                                    <CardItem header style={{paddingBottom: 0}}>
+                                      <Text>{item.location.toUpperCase()}</Text>
+                                    </CardItem>
+                                    <CardItem>
+                                        <Left>
+                                            <Text>
+                                              Sales:- {item.sales}
                                             </Text>
                                         </Left>
                                     </CardItem>
@@ -145,4 +137,4 @@ class Others extends Component {
     }
 }
 
-export default withNavigationFocus(Others);
+export default withNavigationFocus(Search);

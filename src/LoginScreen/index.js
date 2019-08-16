@@ -43,6 +43,12 @@ class LoginScreen extends Component {
 
 	render() {
 		const { username, password, errors, busy } = this.state;
+		if(busy)
+			return(
+					<View style={Styles.loadingContainer}>
+						<Spinner color="#cd9930" />
+					</View>
+				)
 		return (
 			<KeyboardAvoidingView  style={{flex:1, justifyContent:'center'}} behaviour='position' enabled>
 				<StatusBar backgroundColor="#cd9930" barStyle="light-content" />

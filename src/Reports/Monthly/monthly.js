@@ -19,13 +19,13 @@ class Monthly extends Component {
                 <Icon name="arrow-left" size={20} style={{color:"#fff"}}/>
             </TouchableOpacity>
         ),
-        // headerRight: (
-        //     <TouchableOpacity
-        //         style={Styles.headerButton}
-        //         onPress={() => navigation.navigate('Search')}>
-        //         <Icon name="search" size={20} style={{color:"#fff"}}/>
-        //     </TouchableOpacity>
-        // ),
+        headerRight: (
+            <TouchableOpacity
+                style={Styles.headerButton}
+                onPress={() => navigation.navigate('Search', {data: navigation.state.params.data, filter: navigation.state.params.filter})}>
+                <Icon name="search" size={20} style={{color:"#fff"}}/>
+            </TouchableOpacity>
+        ),
         headerStyle:{
             backgroundColor: "#cd9930",
             color:"#fff"
@@ -56,6 +56,10 @@ class Monthly extends Component {
       }
 
     componentDidMount(){
+        this.props.navigation.setParams({
+            data: this.state.data,
+            filter: this.props.navigation.dangerouslyGetParent().getParam('filter')
+        });
         this.fetch();
     }
 
@@ -81,6 +85,10 @@ class Monthly extends Component {
                 data: data,
                 busy: false,
                 filter: filter
+            },()=>{
+                this.props.navigation.setParams({
+                    data: this.state.data,
+                });
             })
           })
           .catch((err)=>{

@@ -22,7 +22,8 @@
         android:label="@string/app_name"
         android:networkSecurityConfig="@xml/react_native_config"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true" >
         <activity
             android:name="com.auric.MainActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
