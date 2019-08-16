@@ -111,7 +111,7 @@ class Weekly extends Component {
                   {
                     this.state.data.map(item=>{
                         return(
-                                <Card button onPress={()=> alert("yipiee")} key={this.state.data.indexOf(item)}>
+                                <Card key={this.state.data.indexOf(item)}>
                                     <CardItem header style={{paddingBottom: 0}}>
                                       <Text>{item.user.toUpperCase()}</Text>
                                     </CardItem>

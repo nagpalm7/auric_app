@@ -8,7 +8,7 @@ export const USER_USERNAME = "username";
 export const USER_NAME = "name";
 export const USER_TYPE = "type";
 
-export const onSignIn = (username, password, navigation, setErrors=null) => {
+export const onSignIn = (username, password, navigation, setErrors=null, setBusy=null) => {
   console.log('Sign In with ', username, password)
   axios.post(base_url + '/api-token-auth/', {
     username: username,
@@ -30,6 +30,7 @@ export const onSignIn = (username, password, navigation, setErrors=null) => {
         AsyncStorage.setItem(USER_USERNAME, String(res.data.username));
         AsyncStorage.setItem(USER_TYPE, String(res.data.typeOfUser));
         console.log(res.data)
+        await setBusy(false);
         if(res.data.typeOfUser === 'admin'){
           navigation.navigate('SignedInAdmin')
         }else{
@@ -45,6 +46,7 @@ export const onSignIn = (username, password, navigation, setErrors=null) => {
   })
   .catch(async (err)=>{
     await setErrors(err.response.data);
+    await setBusy(false);
     console.log('err', err.response.data);
   });
 };

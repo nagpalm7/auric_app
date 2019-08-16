@@ -34,30 +34,21 @@ class LoginScreen extends Component {
 		this.setState({ errors });
 	}
 
-	async handleLogin(){
+	setBusy(value){
+		this.setState({busy: value})
+	}
+
+	handleLogin(){
 		this.setState({ busy: true}, async ()=>{
-		await onSignIn(this.state.username, this.state.password, this.props.navigation, this.setErrors.bind(this))
-		this.setState({busy:false});
+			await onSignIn(this.state.username, this.state.password, this.props.navigation, this.setErrors.bind(this), this.setBusy.bind(this))
 		})
 	}
 
 	render() {
-		const { username, password, errors, busy } = this.state;
-		if(busy)
-			return(
-					<View style={Styles.loadingContainer}>
-						<Spinner color="#cd9930" />
-					</View>
-				)
+		const { username, password, errors } = this.state;
 		return (
 			<KeyboardAvoidingView  style={{flex:1, justifyContent:'center'}} behaviour='position' enabled>
 				<StatusBar backgroundColor="#cd9930" barStyle="light-content" />
-				{ 
-					busy && 
-					<View style={Styles.loadingContainer}>
-						<Spinner color="#cd9930" />
-					</View>
-				}
 				<ScrollView contentContainerStyle={Styles.loginContainer} keyboardShouldPersistTaps="always">
 					<Image
 						style={Styles.logo}
@@ -97,8 +88,9 @@ class LoginScreen extends Component {
 						<Text style={Styles.error}>{errors["password"]}</Text>}
 						{"non_field_errors" in errors && 
 						<Text style={Styles.error}>{errors["non_field_errors"]}</Text>}
-					<Button block style={Styles.loginButton} onPress={()=>this.handleLogin()}>
+					<Button block disabled={this.state.busy} style={Styles.loginButton} onPress={this.handleLogin.bind(this)}>
 						<Text>Login</Text>
+						{this.state.busy && <Spinner color="#fff" size={16}/>}
 					</Button>
 					</Form>
 				</ScrollView>
