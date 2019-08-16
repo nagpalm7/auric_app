@@ -433,8 +433,9 @@ class FormTab extends Component {
                             onChangeText={jumboCombos => this.setState({jumboCombos})}
                         />
                     </Item>
-                    <Button block ref={ref => (this.button = ref)} style={Styles.loginButton} onPress={() => { this.handleSubmit() }}>
+                    <Button block disabled={this.state.busy} ref={ref => (this.button = ref)} style={Styles.loginButton} onPress={() => { this.handleSubmit() }}>
                         <Text>Submit</Text>
+                        {this.state.busy && <Spinner color="#fff" size={16}/>}
                     </Button>
                   </Form>
                   </KeyboardAwareScrollView>

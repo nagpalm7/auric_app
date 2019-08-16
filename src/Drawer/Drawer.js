@@ -107,6 +107,16 @@ class Drawer extends Component {
                   </Right>
                 </ListItem>
               </TouchableNativeFeedback>
+              <TouchableNativeFeedback onPress={() => { this.navigateToScreen('DownloadReports'); }}>
+                <ListItem selected={this.props.activeItemKey === 'DownloadReports'}>
+                  <Left>
+                    <Text>Download Reports</Text>
+                  </Left>
+                  <Right>
+                    <Icon name="arrow-forward" />
+                  </Right>
+                </ListItem>
+              </TouchableNativeFeedback>
             </List>
           }
         </ScrollView>

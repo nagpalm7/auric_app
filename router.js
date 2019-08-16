@@ -10,6 +10,7 @@ import Others from './src/Others';
 import Reports from './src/Reports';
 import Users from './src/Users';
 import Submissions from './src/Submissions';
+import DownloadReports from './src/DownloadReports';
 
 const headerStyle = {
   marginTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
@@ -70,6 +71,13 @@ export const DrawerNavigatorAdmin = createDrawerNavigator({
     screen: Reports,
     navigationOptions: {
       drawerLabel: 'Reports',
+      drawerIcon: ({ tintColor }) => <Icon name="user-circle" size={17} />,
+    }
+  },
+  DownloadReports: {
+    screen: DownloadReports,
+    navigationOptions: {
+      drawerLabel: 'Download Reports',
       drawerIcon: ({ tintColor }) => <Icon name="user-circle" size={17} />,
     }
   },
