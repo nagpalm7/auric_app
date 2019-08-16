@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { AsyncStorage, KeyboardAvoidingView, ScrollView, View, TouchableOpacity, StatusBar } from 'react-native';
-import { Container, Header, Content, Card, CardItem, Text, Body, Left, Spinner } from 'native-base';
+import { Container, Header, Content, Card, CardItem, Text, Body, Left, Right, Spinner, Button, Icon, Item, Input } from 'native-base';
 import { onSignOut, USER_KEY, USER } from "../../../auth";
 import { withNavigationFocus } from "react-navigation";
-import Icon from 'react-native-vector-icons/FontAwesome5';
+import Icon2 from 'react-native-vector-icons/FontAwesome5';
 import axios from 'axios';
 import Styles from '../../styles';
 import {base_url} from "../../../base_url";
@@ -16,14 +16,14 @@ class Monthly extends Component {
             <TouchableOpacity
                 style={Styles.headerButton}
                 onPress={() => navigation.navigate('Reports')}>
-                <Icon name="arrow-left" size={20} style={{color:"#fff"}}/>
+                <Icon2 name="arrow-left" size={20} style={{color:"#fff"}}/>
             </TouchableOpacity>
         ),
         headerRight: (
             <TouchableOpacity
                 style={Styles.headerButton}
                 onPress={() => navigation.navigate('Search', {data: navigation.state.params.data, filter: navigation.state.params.filter})}>
-                <Icon name="search" size={20} style={{color:"#fff"}}/>
+                <Icon2 name="search" size={20} style={{color:"#fff"}}/>
             </TouchableOpacity>
         ),
         headerStyle:{
@@ -41,7 +41,8 @@ class Monthly extends Component {
             data: [],
             busy: true,
             search: false,
-            filter: null
+            filter: null,
+            value: '0'
         }
     }
 
@@ -107,6 +108,22 @@ class Monthly extends Component {
         return (
             <Container style={Styles.container}>
                 <StatusBar backgroundColor="#d0a44c" barStyle="light-content" />
+                <View style={{flexDirection:'row', justifyContent:'center', marginBottom: 8}}>
+                    <Button light style={{margin: 4}} onPress={()=>this.setState({value:String(parseInt(this.state.value) - 1)})}>
+                        <Icon name='remove' />
+                    </Button>
+                    <Item style={{width: '20%'}}>
+                        <Input 
+                            value={this.state.value}
+                            onChangeText={(value)=>this.setState({value})}
+                            keyboardType={'numeric'}
+                            textAlign={'center'}
+                        />
+                    </Item>
+                    <Button light style={{margin: 4}} onPress={()=>this.setState({value:String(parseInt(this.state.value) + 1)})}>
+                        <Icon name='add' />
+                    </Button>
+                </View>
                 <Content>
                   {
                     this.state.data.map(item=>{
@@ -124,6 +141,16 @@ class Monthly extends Component {
                                               Productivity:- {item.productivity}
                                             </Text>
                                         </Left>
+                                        {parseInt(this.state.value) >= parseInt(item.sales) &&
+                                            <Right>
+                                                <Icon name="thumbs-down" style={{color:"red"}}/>
+                                            </Right>
+                                        }
+                                        {parseInt(this.state.value) < parseInt(item.sales) &&
+                                            <Right>
+                                                <Icon name="thumbs-up" style={{color:"green"}}/>
+                                            </Right>
+                                        }
                                     </CardItem>
                                 </Card>
                             )

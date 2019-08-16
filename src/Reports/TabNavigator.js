@@ -13,7 +13,7 @@ const Reports = createBottomTabNavigator({
             tabBarIcon: ({ tintColor }) => {
                 return (
                     <Icon
-                        name="search"
+                        name="today"
                         size={17}
                         style={{color:tintColor}}/>
                 )
@@ -27,7 +27,7 @@ const Reports = createBottomTabNavigator({
             tabBarIcon: ({ tintColor }) => {
                 return (
                     <Icon
-                        name="search"
+                        name="calendar"
                         size={17}
                         style={{color:tintColor}}/>
                 )
@@ -40,7 +40,7 @@ const Reports = createBottomTabNavigator({
             title: "Monthly Reports",
             tabBarIcon: ({ tintColor }) => (
                 <Icon
-                    name="home"
+                    name="stats"
                     size={17}
                     style={{color:tintColor}}/>
             )
