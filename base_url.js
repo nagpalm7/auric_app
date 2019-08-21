@@ -1,1 +1,1 @@
-export const base_url = 'http://13.235.78.30'
+export const base_url = 'https://theauric.tk'

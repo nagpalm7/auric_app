@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Mon Jul 29 20:08:11 IST 2019
+#Sun Aug 18 15:47:57 IST 2019
 56.path=fonts/FontAwesome5_Brands.ttf
 5.base=/home/mustafa/Documents/auric/android/app/build/intermediates/transforms/mergeJniLibs/release/0
 42.base=/home/mustafa/Documents/auric/android/app/build/intermediates/merged_assets/release/mergeReleaseAssets/out
