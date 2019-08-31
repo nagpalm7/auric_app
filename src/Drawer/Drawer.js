@@ -52,6 +52,16 @@ class Drawer extends Component {
                   </Right>
                 </ListItem>
               </TouchableNativeFeedback>
+              <TouchableNativeFeedback onPress={() => { this.navigateToScreen('Customer'); }}>
+                <ListItem selected={this.props.activeItemKey === 'Customer'}>
+                 <Left>
+                    <Text>Customers</Text>
+                  </Left>
+                  <Right>
+                    <Icon name="arrow-forward" />
+                  </Right>
+                </ListItem>
+              </TouchableNativeFeedback>
               <TouchableNativeFeedback onPress={() => { this.navigateToScreen('MySubmissions'); }}>
                 <ListItem selected={this.props.activeItemKey === 'MySubmissions'}>
                  <Left>
@@ -110,7 +120,7 @@ class Drawer extends Component {
               <TouchableNativeFeedback onPress={() => { this.navigateToScreen('DownloadReports'); }}>
                 <ListItem selected={this.props.activeItemKey === 'DownloadReports'}>
                   <Left>
-                    <Text>Download Reports</Text>
+                    <Text>Download CSV</Text>
                   </Left>
                   <Right>
                     <Icon name="arrow-forward" />

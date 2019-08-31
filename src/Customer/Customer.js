@@ -8,10 +8,10 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import axios from 'axios';
 import Styles from '../styles';
 
-class Submissions extends Component {
+class Customer extends Component {
 
     static navigationOptions = ({ navigation }) => ({
-        title: "My Submissions",
+        title: "Customers",
         headerLeft: (
             <TouchableOpacity
                 style={Styles.headerButton}
@@ -33,7 +33,7 @@ class Submissions extends Component {
         this.state = {
             data: [],
             busy: true,
-            busy_mid: false,
+            busy_mid: false
         }
     }
 
@@ -134,7 +134,7 @@ class Submissions extends Component {
                   {
                     this.state.data.map(item=>{
                         return(
-                                <TouchableNativeFeedback onPress={()=>this.props.navigation.navigate('EditSubmission', {data: item})} key={this.state.data.indexOf(item)}>
+                                <TouchableNativeFeedback onPress={()=>this.props.navigation.navigate('List', {pk: item.url.split('/')[5]})} key={this.state.data.indexOf(item)}>
                                     <Card>
                                         <CardItem header style={{paddingBottom: 0}}>
                                           <Text>
@@ -147,9 +147,6 @@ class Submissions extends Component {
                                                   Sales:- {item.sales}
                                                 </Text>
                                             </Left>
-                                            <Right>
-                                                <Icon name="edit" style={{color:"#d0a44c", fontSize:20}}/>
-                                            </Right>
                                         </CardItem>
                                     </Card>
                                 </TouchableNativeFeedback>
@@ -162,4 +159,4 @@ class Submissions extends Component {
     }
 }
 
-export default withNavigationFocus(Submissions);
+export default withNavigationFocus(Customer);

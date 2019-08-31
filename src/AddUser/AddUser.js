@@ -19,9 +19,12 @@ class AddUser extends Component {
                 <Icon name="bars" size={20} style={{color:"#fff"}}/>
             </TouchableOpacity>
         ),
+        headerTitleStyle:{
+            fontFamily: 'Roboto'
+        },
         headerStyle:{
             backgroundColor: "#cd9930",
-            color:"#fff"
+            color:"#fff",
         },
         headerTitleStyle:{
             color:"#fff"
@@ -216,8 +219,9 @@ class AddUser extends Component {
                             onChangeText={confirm => this.setState({confirm})}
                         />
                     </Item>
-                    <Button block ref={ref => (this.button = ref)} style={Styles.loginButton} onPress={() => { this.handleSubmit() }}>
+                    <Button block disabled={this.state.busy} ref={ref => (this.button = ref)} style={Styles.loginButton} onPress={() => { this.handleSubmit() }}>
                         <Text>Add User</Text>
+                        {this.state.busy && <Spinner color="#fff" size={16}/>}
                     </Button>
                   </Form>
                   </KeyboardAwareScrollView>

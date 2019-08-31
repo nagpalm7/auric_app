@@ -42,7 +42,7 @@ class Monthly extends Component {
             busy: true,
             search: false,
             filter: null,
-            value: '0'
+            value: '10'
         }
     }
 

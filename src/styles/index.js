@@ -59,6 +59,12 @@ export default StyleSheet.create({
         fontSize: 20,
         fontWeight: '600'
     },
+    noData:{
+        color: '#cd9930',
+        fontSize: 16,
+        fontWeight: '600',
+        textAlign: 'center'
+    },
     drawerContainer:{
         flex: 1,
     },

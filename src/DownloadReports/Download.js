@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AsyncStorage, KeyboardAvoidingView, ScrollView, View, TouchableOpacity, StatusBar } from 'react-native';
+import {WebView, AsyncStorage, KeyboardAvoidingView, ScrollView, View, TouchableOpacity, StatusBar, Linking } from 'react-native';
 import { Container, Content, Picker, Item, Form, Spinner, Button, Text } from 'native-base';
 import { onSignOut, USER_KEY, USER } from "../../auth";
 import { withNavigationFocus } from "react-navigation";
@@ -11,7 +11,7 @@ import {base_url} from "../../base_url";
 class Download extends Component {
 
     static navigationOptions = ({ navigation }) => ({
-        title: "Download Reports",
+        title: "Download CSV",
         headerLeft: (
             <TouchableOpacity
                 style={Styles.headerButton}
@@ -32,8 +32,11 @@ class Download extends Component {
         super(props);
         this.state = {
             busy: false,
+            busy2:false,
             month: '1',
-            csv: null
+            month2: '1',
+            csv: null,
+            flag: false
         }
     }
 
@@ -44,6 +47,7 @@ class Download extends Component {
                 token = res;
             })
             .catch(err => console.log(err));
+
         this.setState({busy:true},()=>{
             axios.get(base_url + `/api/download-reports/?month=${this.state.month}`, {
                 headers: {
@@ -52,13 +56,59 @@ class Download extends Component {
               })
               .then(async (res)=>{
                 let data = res.data;
-                console.log(data)
                 this.setState({
-                    csv: csvFile,
+                    csv: data.csvFile,
+                    busy: false
                 })
+                Linking.canOpenURL(data.csvFile).then(supported => {
+                      if (supported) {
+                        Linking.openURL(data.csvFile);
+                      } else {
+                        console.log("Don't know how to open URI: " + data.csvFile);
+                      }
+                    });
+
               })
               .catch((err)=>{
-                console.log('error', err.response.data);
+                this.setState({busy:false})
+                console.log('error', err);
+              });
+        })
+    }
+
+
+    async handleSubmit2(){
+        let token;
+        await AsyncStorage.getItem(USER_KEY)
+            .then(res => {
+                token = res;
+            })
+            .catch(err => console.log(err));
+
+        this.setState({busy2:true},()=>{
+            axios.get(base_url + `/api/download-customer-information/?month=${this.state.month2}`, {
+                headers: {
+                Authorization: 'Token ' + token //the token is a variable which holds the token
+                },
+              })
+              .then(async (res)=>{
+                let data = res.data;
+                this.setState({
+                    csv: data.csvFile,
+                    busy2: false
+                })
+                Linking.canOpenURL(data.csvFile).then(supported => {
+                      if (supported) {
+                        Linking.openURL(data.csvFile);
+                      } else {
+                        console.log("Don't know how to open URI: " + data.csvFile);
+                      }
+                    });
+
+              })
+              .catch((err)=>{
+                this.setState({busy2:false})
+                console.log('error', err);
               });
         })
     }
@@ -68,6 +118,7 @@ class Download extends Component {
             <Container style={Styles.container}>
                 <StatusBar backgroundColor="#d0a44c" barStyle="light-content" />
                 <Content>
+                <Text style={Styles.formLabel}>Download Reports</Text>
                 <Form>
                     <Item picker>
                       <Picker
@@ -88,8 +139,32 @@ class Download extends Component {
                     </Item>
                 </Form>
                 <Button block disabled={this.state.busy} style={Styles.loginButton} onPress={() => { this.handleSubmit() }}>
-                    <Text>Download CSV</Text>
+                    <Text>Download Reports</Text>
                     {this.state.busy && <Spinner color="#fff" size={16}/>}
+                </Button>
+                <Text style={Styles.formLabel}>Download Customer Information</Text>
+                <Form>
+                    <Item picker>
+                      <Picker
+                        mode="dropdown"
+                        iosIcon={<Icon name="arrow-down" />}
+                        style={{ width: undefined }}
+                        placeholderStyle={{ color: "#bfc6ea" }}
+                        placeholderIconColor="#007aff"
+                        selectedValue={this.state.month2}
+                        onValueChange={
+                            (month2)=>this.setState({month2})
+                        }
+                      >
+                        {
+                            months.map(month=> <Picker.Item label={month.title} value={month.value} />)
+                        }
+                      </Picker>
+                    </Item>
+                </Form>
+                <Button block disabled={this.state.busy2} style={Styles.loginButton} onPress={() => { this.handleSubmit2() }}>
+                    <Text>Download Customer Information</Text>
+                    {this.state.busy2 && <Spinner color="#fff" size={16}/>}
                 </Button>
                 </Content>
             </Container>

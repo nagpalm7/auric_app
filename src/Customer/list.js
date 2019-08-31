@@ -8,15 +8,22 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import axios from 'axios';
 import Styles from '../styles';
 
-class Submissions extends Component {
+class List extends Component {
 
     static navigationOptions = ({ navigation }) => ({
-        title: "My Submissions",
+        title: "Customers",
         headerLeft: (
             <TouchableOpacity
                 style={Styles.headerButton}
-                onPress={() => navigation.openDrawer()}>
-                <Icon name="bars" size={20} style={{color:"#fff"}}/>
+                onPress={() => navigation.goBack()}>
+                <Icon name="arrow-left" size={20} style={{color:"#fff"}}/>
+            </TouchableOpacity>
+        ),
+        headerRight: (
+            <TouchableOpacity
+                style={Styles.headerButton}
+                onPress={() => navigation.navigate('Add', {pk: navigation.getParam('pk')})}>
+                <Icon name="plus" size={20} style={{color:"#fff"}}/>
             </TouchableOpacity>
         ),
         headerStyle:{
@@ -33,7 +40,7 @@ class Submissions extends Component {
         this.state = {
             data: [],
             busy: true,
-            busy_mid: false,
+            busy_mid: false
         }
     }
 
@@ -42,7 +49,7 @@ class Submissions extends Component {
         if (prevProps.isFocused !== this.props.isFocused) {
           // Use the `this.props.isFocused` boolean
           // Call any action
-          this.setState({busy_mid:true},()=>{
+          this.setState({busy_mid: true},()=>{
             this.fetch();
           })
         }
@@ -59,7 +66,7 @@ class Submissions extends Component {
                 token = res;
             })
             .catch(err => console.log(err));
-        await axios.get(base_url + '/api/form/?onlyMy=true', {
+        await axios.get(base_url + `/api/customer/?id=${this.props.navigation.getParam('pk')}`, {
             headers: {
             Authorization: 'Token ' + token //the token is a variable which holds the token
             },
@@ -67,30 +74,6 @@ class Submissions extends Component {
           .then(async (res)=>{
             let data = res.data;
             console.log(data)
-            if(data.length > 0){
-                for(var i=0; i<data.length; i++){
-                    await axios.get(data[i].user,{
-                        headers: {
-                        Authorization: 'Token ' + token //the token is a variable which holds the token
-                        },
-                    })
-                    .then(res=>{
-                        data[i].user = res.data;
-                    }).catch(err=>{
-                        console.log(err);
-                    })
-                    await axios.get(data[i].location,{
-                        headers: {
-                        Authorization: 'Token ' + token //the token is a variable which holds the token
-                        },
-                    })
-                    .then(res=>{
-                        data[i].location = res.data;
-                    }).catch(err=>{
-                        console.log(err);
-                    })
-                }
-            }
             this.setState({
                 data: data,
                 busy: false,
@@ -115,9 +98,9 @@ class Submissions extends Component {
                         <StatusBar backgroundColor="#d0a44c" barStyle="light-content" />
                         <View style={{flex:1, justifyContent: 'center', alignItems:'center'}}>
                             <Text 
-                                onPress={()=>this.props.navigation.navigate('SubmitForm')} 
+                                onPress={()=>this.props.navigation.navigate('Add', {pk: this.props.navigation.getParam('pk')})} 
                                 style={Styles.noData}>
-                                There are no submissions for today! Click here to submit.
+                                Add Customer
                             </Text>
                         </View>
                     </Container>
@@ -134,22 +117,19 @@ class Submissions extends Component {
                   {
                     this.state.data.map(item=>{
                         return(
-                                <TouchableNativeFeedback onPress={()=>this.props.navigation.navigate('EditSubmission', {data: item})} key={this.state.data.indexOf(item)}>
+                                <TouchableNativeFeedback key={this.state.data.indexOf(item)}>
                                     <Card>
                                         <CardItem header style={{paddingBottom: 0}}>
                                           <Text>
-                                              {item.location.location}
+                                              {item.name}
                                           </Text>
                                         </CardItem>
                                         <CardItem>
                                             <Left>
                                                 <Text>
-                                                  Sales:- {item.sales}
+                                                  ( {item.address} )
                                                 </Text>
                                             </Left>
-                                            <Right>
-                                                <Icon name="edit" style={{color:"#d0a44c", fontSize:20}}/>
-                                            </Right>
                                         </CardItem>
                                     </Card>
                                 </TouchableNativeFeedback>
@@ -162,4 +142,4 @@ class Submissions extends Component {
     }
 }
 
-export default withNavigationFocus(Submissions);
+export default withNavigationFocus(List);

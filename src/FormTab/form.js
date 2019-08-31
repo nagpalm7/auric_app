@@ -39,6 +39,7 @@ class FormTab extends Component {
             locations_used:[],
             location:'...',
             group:'...',
+            num_samplings:'',
             mind_o:'',
             body_o:'',
             skin_o:'',
@@ -48,6 +49,7 @@ class FormTab extends Component {
             skin_c:'',
             multipack_c:'',
             jumboCombos:'',
+            comment:'',
             name:'',
             busyFull: true
         }
@@ -132,6 +134,7 @@ class FormTab extends Component {
                 this.state.body_c === '' ||
                 this.state.skin_c === '' ||
                 this.state.multipack_c === '' ||
+                this.state.num_samplings === '' ||
                 this.state.jumboCombos === ''
             ){
                 Toast.show({
@@ -160,8 +163,10 @@ class FormTab extends Component {
             "body_c": parseInt(this.state.body_c),
             "skin_c": parseInt(this.state.skin_c),
             "multipack_c": parseInt(this.state.multipack_c),
+            "num_samplings": parseInt(this.state.num_samplings),
             "jumbo_combos": parseInt(this.state.jumboCombos),
-            "user": this.state.user
+            "user": this.state.user,
+            "comment": this.state.comment
         }
         console.log(data)
         let token = null
@@ -182,6 +187,7 @@ class FormTab extends Component {
                 buttonText: "Okay",
                 duration: 2000
               })
+            // this.props.navigation.navigate('Add', {pk: res.data.url.split('/')[5]})
             this.setState({
                 locations_used:[],
                 mind_c:'',
@@ -195,8 +201,10 @@ class FormTab extends Component {
                 body_c:'',
                 skin_c:'',
                 multipack_c:'',
+                num_samplings:'',
                 jumboCombos:'',
-            },()=>this.props.navigation.navigate("SubmitForm"))
+                comment: ''
+            },()=>this.props.navigation.navigate('Add', {pk: res.data.url.split('/')[5]}))
           })
           .catch((err)=>{
             console.log('error', err);
@@ -410,7 +418,7 @@ class FormTab extends Component {
                             getRef={ref => (this.multipack_c = ref)}
                             value={this.state.multipack_c}
                             onSubmitEditing={()=>{
-                                this._scrollToInput(ReactNative.findNodeHandle(this.button))
+                                this._scrollToInput(ReactNative.findNodeHandle(this.num_samplings))
                                 this.jumboCombos._root.focus();
                             }}
                             returnKeyType = {"next"}
@@ -426,11 +434,41 @@ class FormTab extends Component {
                             ref={ref => (this.jumboCombos = ref)}
                             returnKeyType = {"done"}
                             onSubmitEditing={()=>{
-                                this.handleSubmit()
+                                // this.handleSubmit()
+                                this._scrollToInput(ReactNative.findNodeHandle(this.comment))
+                                this.num_samplings._root.focus();
                             }}
                             blurOnSubmit={false}
                             keyboardType='numeric'
+                            returnKeyType = {"next"}
                             onChangeText={jumboCombos => this.setState({jumboCombos})}
+                        />
+                    </Item>
+                    <Item floatingLabel style={Styles.formItem} >
+                        <Label>Number Of Samplings</Label>
+                        <Input 
+                            getRef={ref => (this.num_samplings = ref)}
+                            value={this.state.num_samplings}
+                            onSubmitEditing={()=>{
+                                this._scrollToInput(ReactNative.findNodeHandle(this.button))
+                                this.comment._root.focus();
+                            }}
+                            returnKeyType = {"next"}
+                            blurOnSubmit={false}
+                            keyboardType='numeric'
+                            onChangeText={num_samplings => this.setState({num_samplings})}
+                        />
+                    </Item>
+                    <Item floatingLabel style={Styles.formItem} >
+                        <Label>Comment</Label>
+                        <Input 
+                            getRef={ref => (this.comment = ref)}
+                            value={this.state.comment}
+                            onSubmitEditing={()=>{
+                                this.handleSubmit()
+                            }}
+                            blurOnSubmit={false}
+                            onChangeText={comment => this.setState({comment})}
                         />
                     </Item>
                     <Button block disabled={this.state.busy} ref={ref => (this.button = ref)} style={Styles.loginButton} onPress={() => { this.handleSubmit() }}>
